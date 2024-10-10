@@ -47,5 +47,127 @@
   </header>
 
   <style>
-    
+    /**HEADER & BURGER Menu**/
+header {
+  position: sticky; /**ændre?**/
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  background-color: var(--primary);
+  /*box-shadow: 0 12px 28px 0 rgba(156, 5, 85, 0.241);*/
+}
+.logo img {
+  width: 50px;
+  height: 50px;
+  padding: 0; /**Gør at der ikke kommer padding på som gør logo mindre**/
+}
+
+header nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 0.4rem;
+  gap: 30px;
+  overflow-x: auto;
+}
+
+.menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  transition: color 0.3s;
+  margin: 30px;
+}
+.menu a:hover {
+  color: var(--quaternary); /**ændre?**/
+}
+
+.burger {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.burger .line {
+  width: 100%;
+  height: 2px;
+  margin-bottom: 5px;
+  transition: 0.2s linear;
+}
+.menu {
+  display: none;
+}
+.burger {
+  display: block;
+}
+.burger.active .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+  transition: 0.2s linear;
+}
+.burger.active .line:nth-child(2) {
+  opacity: 0;
+  transition: 0.15s linear;
+}
+.burger.active .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+  transition: 0.2s linear;
+}
+
+nav.active .menu {
+  display: block;
+  background-color: var(--primary);
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  z-index: 1;
+}
+
+nav.active .menu li {
+  margin: 10px 20px;
+}
+
+/**Burger menu desktop OBS gør det større!**/
+@media screen and (min-width: 800px) {
+  .menu {
+    display: none;
+  }
+  .burger {
+    display: block;
+    margin-bottom: 50px;
+  }
+  nav.active .menu {
+    top: 130px;
+    height: 600px;
+  }
+  .logo img {
+    width: 100px;
+    height: 100px;
+    padding: 0; /**Gør at der ikke kommer padding på som gør logo mindre**/
+  }
+  .menu a {
+    margin: 80px;
+  }
+  .burger .line {
+    margin-bottom: 10px;
+    height: 3px;
+    width: 150%;
+  }
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    transition: 0.2s linear;
+  }
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(14px, -14px);
+    transition: 0.2s linear;
+  }
+}
   </style>

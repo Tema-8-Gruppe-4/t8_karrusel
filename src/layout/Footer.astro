@@ -45,5 +45,25 @@
   </footer>
 
   <style>
-
+/**Styling Footer**/
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: left;
+}
+.social_media {
+  display: flex;
+  justify-content: left;
+  gap: 15px;
+}
+.social_media img {
+  width: 1.5rem;
+}
+/**Ændrer størrelsen på icons i desktop**/
+@media (min-width: 800px) {
+  .social_media img {
+    width: 2.5rem;
+  }
+}
   </style>

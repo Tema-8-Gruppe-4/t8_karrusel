@@ -1,0 +1,14 @@
+/**Grønt tema**/
+.menu a,
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+footer p {
+  color: var(--secondary);
+}
+.burger .line {
+  background-color: var(--secondary);
+}

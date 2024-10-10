@@ -1,0 +1,257 @@
+/**I global lægger vi ind alt der er fælles for at sikre lighed og en rød tråd i designet!**/
+
+/*************** Reset *********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/**Fonts OBS VIRKER IKKE :(**/
+@font-face {
+  font-family: "jhc_audemarsmedium";
+  src: url("fonts/audemars/jhcaudemars-medium-webfont.woff2") format("woff2"),
+    url("fonts/audemars/jhcaudemars-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "bacilus_grotesqueregular";
+  src: url("fonts/bacilus/bacilusgrotesque-regular-webfont.woff2")
+      format("woff2"),
+    url("fonts/bacilus/bacilusgrotesque-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/**Anonymous Pro fra Google Fonts som linker til head i MainLayout**/
+.anonymous-pro-regular {
+  font-family: "Anonymous Pro", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/**Variables**/
+html {
+  /**Fonts**/
+  --font1: "jhc_audemarsmedium";
+  --font2: "bacilus_grotesqueregular";
+  --font3: "Anonymous Pro", monospace;
+
+  /**Colors**/
+  --primary: #282828;
+  --secondary: #91ff36;
+  --tertiary: #9aa6fe;
+  --quaternary: #ffffff;
+  --quinary: #9aa6fee5; /**Lidt gennesigtig neonlilla til festivalprogram**/
+}
+
+/**Fælles stylede tags MOBILE
+  OBS husk også margins og paddings i global
+  OBS alle værdier der er lagt ind samsvarer med Figma så font-size skal muligvis ændres?**/
+
+body {
+  background-color: var(--primary);
+}
+main {
+  margin: 30px;
+}
+h1 {
+  font-family: var(--font1);
+  font-size: 64px;
+}
+h2 {
+  font-family: var(--font2);
+  font-size: 40px;
+}
+h3 {
+  font-family: var(--font2);
+  font-size: 32px;
+}
+h4 {
+  font-family: var(--font2);
+  font-size: 24px;
+}
+p {
+  font-family: var(--font2);
+  font-size: 16px;
+}
+a {
+  font-family: var(--font3);
+  font-size: 24px;
+}
+footer {
+  font-family: var(--font2);
+  font-size: 8px;
+  margin: 30px;
+}
+
+/**Fælles stylede tags DESKTOP
+  OBS større font-size**/
+@media (min-width: 800px) {
+  h1 {
+    font-size: 180px;
+  }
+  h2 {
+    font-size: 80px;
+  }
+  h3 {
+    font-size: 56px;
+  }
+  h4 {
+    font-size: 48px;
+  }
+  p {
+    font-size: 32px;
+  }
+  a {
+    font-size: 40px;
+  }
+  footer {
+    font-size: 24px;
+  }
+}
+
+/**HEADER & BURGER Menu**/
+header {
+  position: sticky; /**ændre?**/
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  background-color: var(--primary);
+  /*box-shadow: 0 12px 28px 0 rgba(156, 5, 85, 0.241);*/
+}
+.logo img {
+  width: 50px;
+  height: 50px;
+  padding: 0; /**Gør at der ikke kommer padding på som gør logo mindre**/
+}
+
+header nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 0.4rem;
+  gap: 30px;
+  overflow-x: auto;
+}
+
+.menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  transition: color 0.3s;
+  margin: 30px;
+}
+.menu a:hover {
+  color: var(--quaternary); /**ændre?**/
+}
+
+.burger {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.burger .line {
+  width: 100%;
+  height: 2px;
+  margin-bottom: 5px;
+  transition: 0.2s linear;
+}
+.menu {
+  display: none;
+}
+.burger {
+  display: block;
+}
+.burger.active .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+  transition: 0.2s linear;
+}
+.burger.active .line:nth-child(2) {
+  opacity: 0;
+  transition: 0.15s linear;
+}
+.burger.active .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+  transition: 0.2s linear;
+}
+
+nav.active .menu {
+  display: block;
+  background-color: var(--primary);
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  z-index: 1;
+}
+
+nav.active .menu li {
+  margin: 10px 20px;
+}
+
+/**Burger menu desktop OBS gør det større!**/
+@media screen and (min-width: 800px) {
+  .menu {
+    display: none;
+  }
+  .burger {
+    display: block;
+    margin-bottom: 50px;
+  }
+  nav.active .menu {
+    top: 130px;
+    height: 600px;
+  }
+  .logo img {
+    width: 100px;
+    height: 100px;
+    padding: 0; /**Gør at der ikke kommer padding på som gør logo mindre**/
+  }
+  .menu a {
+    margin: 80px;
+  }
+  .burger .line {
+    margin-bottom: 10px;
+    height: 3px;
+    width: 150%;
+  }
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    transition: 0.2s linear;
+  }
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(14px, -14px);
+    transition: 0.2s linear;
+  }
+}
+
+/**Styling Footer**/
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: left;
+}
+.social_media {
+  display: flex;
+  justify-content: left;
+  gap: 15px;
+}
+.social_media img {
+  width: 1.5rem;
+}
+/**Ændrer størrelsen på icons i desktop**/
+@media (min-width: 800px) {
+  .social_media img {
+    width: 2.5rem;
+  }
+}

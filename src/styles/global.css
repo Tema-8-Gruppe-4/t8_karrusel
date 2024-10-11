@@ -57,18 +57,22 @@ main {
 h1 {
   font-family: var(--font1);
   font-size: 64px;
+  color: var(--secondary);
 }
 h2 {
   font-family: var(--font2);
   font-size: 40px;
+  color: var(--secondary);
 }
 h3 {
   font-family: var(--font2);
   font-size: 32px;
+  color: var(--secondary);
 }
 h4 {
   font-family: var(--font2);
   font-size: 24px;
+  color: var(--secondary);
 }
 p {
   font-family: var(--font2);
@@ -77,6 +81,7 @@ p {
 a {
   font-family: var(--font3);
   font-size: 24px;
+  color: var(--secondary);
 }
 footer {
   font-family: var(--font2);

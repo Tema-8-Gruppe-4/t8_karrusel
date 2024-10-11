@@ -24,28 +24,6 @@
     </nav>
   </header>
 
-
-  <!--Lilla -->
-  <header>
-    <div class="logo">
-      <a href="/index">
-        <img src="svg/lillalogo.svg" alt="Logo" />
-      </a>
-    </div>
-    <nav>
-      <ul class="menu">
-        <li><a href="/index">HOME</a></li>
-        <li><a href="/lineup">LINEUP 2025</a></li>
-        <li><a href="/map">MAP</a></li>
-      </ul>
-      <div class="burger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-    </nav>
-  </header>
-
   <style>
     /**HEADER & BURGER Menu**/
 header {
@@ -171,3 +149,23 @@ nav.active .menu li {
   }
 }
   </style>
+
+<script>
+const burger = document.querySelector(".burger");
+const nav = document.querySelector("nav");
+const menu = document.querySelector(".menu");
+const links = document.querySelectorAll(".menu li a");
+
+//Burger menu
+burger.addEventListener("click", () => {
+  burger.classList.toggle("active");
+  nav.classList.toggle("active");
+});
+
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    burger.classList.remove("active");
+    nav.classList.remove("active");
+  });
+});
+</script>

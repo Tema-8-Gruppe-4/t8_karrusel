@@ -1,0 +1,29 @@
+---
+const {singleview, artistname} = Astro.props;
+---
+<!--Katinka -->
+
+<div>
+    <a href={singleview}>{artistname}</a>
+</div>
+
+<div>
+    <a href="">ARTIST</a>
+</div>
+    
+<style>
+    div {
+    margin-bottom: 2rem;
+    }
+    a {
+        color: white;
+        font-size: 32px;
+        text-decoration: none;
+        /* font-display: capitalize; */
+    }
+    @media (min-width: 800px) {
+        a {
+            font-size: 53px;
+        }
+    }
+</style>

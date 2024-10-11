@@ -1,4 +1,26 @@
 ---
-
+import ProgramCard from "../components/ProgramCard.astro";
 ---
 <!--Katinka -->
+
+<section class="program_section">
+<ProgramCard/>
+<ProgramCard/>
+<ProgramCard/>
+<ProgramCard/>
+</section>
+
+<style>
+    .program_section {
+        text-align: center;
+        margin: 2rem;
+    }
+    
+    /**Desktop styling */
+    @media (min-width: 800px) {
+    .program_section {
+    display: flex;
+    justify-content: space-evenly;
+    }      
+    }
+    </style>

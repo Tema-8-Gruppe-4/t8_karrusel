@@ -1,25 +1,30 @@
 ---
 
 ---
-<!--Katinka -->
+<!--Katinka-->
+<!--OBS hvis tid ændre style når man har klikket i søgefelt-->
 <form>
     <div class="search">
-      <span class="search-icon material-symbols-outlined"></span>
+      <span class="search-icon material-symbols-outlined"><img src="svg/search.svg" alt="searchicon"></span>
       <input class="search-input" type="search" placeholder="Search" />
     </div>
 </form>
 
 <style>
 .search {
-  width: max-content;
+width: max-content;
   display: flex;
   align-items: center;
   border-radius: 75px;
   background: var(--tertiary);
-  width: 350px;
-  height: 50px;
+  width: 60%;
+  height: 35px;
   transition: box-shadow 0.25s;
   margin-left: 2rem;
+}
+.search img {
+display: flex;
+height: 20px;
 }
 .search:focus-within {
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
@@ -34,9 +39,16 @@
   background: transparent;
   width: 350px;
 }
-.search-input::placeholder,
-.search-icon {
+.search-input::placeholder, .search-icon {
   color: var(--primary);
   margin-left: 2rem;
+}
+@media (min-width: 800px) {
+.search {
+height: 50px;
+}
+.search img {
+height: 30px;
+}
 }
 </style>

@@ -1,0 +1,71 @@
+---
+import Button from "./Button.astro";
+---
+
+<section class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq-items">
+    <div class="faq-item">
+      <h3>What are the opening hours and address?</h3>
+      <p>The address is Refshalevej 193...</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I join the festival with mobility impairment?</h3>
+      <p>Yes, but you need to bring a companion...</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I exchange my PDF ticket?</h3>
+      <p>Go to the ticket office located at the entrance...</p>
+    </div>
+    <div class="faq-item">
+      <h3>What will there be on site?</h3>
+      <p>3 music stages, a vintage carousel ride...</p>
+    </div>
+  </div>
+  <div class="button-container">
+    <Button buttontext="More FAQ’s here" />
+  </div>
+</section>
+
+<style>
+  .faq-section {
+    padding: 20px;
+    background-image: url("../imgs/faqimg.webp"); /* Baggrundsbillede */
+    background-size: cover;
+    background-position: center;
+  }
+
+  .faq-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .faq-item {
+    background-color: var(--primary);
+    padding: 15px;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+  }
+
+  .faq-item:hover {
+    background-color: rgba(0, 0, 0, 1);
+    cursor: pointer;
+  }
+
+  /* Stil for h2 i sektionen */
+  .faq-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .faq-section h3,
+  .faq-section p {
+    color: var(--quaternary);
+  }
+
+  .button-container {
+    display: flex; /* Brug flexbox */
+    justify-content: center; /* Centrer knappen horisontalt */
+    margin-top: 20px; /* Afstand over knappen */
+  }
+</style>

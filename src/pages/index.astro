@@ -1,16 +1,200 @@
 ---
-import "../styles/groen.css";
+// import "../styles/groen.css";
 import MainLayout from "../layout/MainLayout.astro";
 import Header from "../layout/Header.astro";
 import Search from "../components/Search.astro";
 import Footer from "../layout/Footer.astro";
 import Button from "../components/Button.astro";
+import FaqBoks from "../components/FaqBoks.astro";
 ---
 
-<MainLayout>
+<!-- <MainLayout>
   <Header />
+  <img src="../imgs/hero.webp" alt="Hero karrusel" />
   <h1>KARRUSEL FESTIVAL<br />28. - 30. AUGUST 2025</h1>
   <Search />
+  <img src="../imgs/img2.webp" alt="Hero karrusel" />
+  <img src="../imgs/img3.webp" alt="Hero karrusel" />
+  <img src="../imgs/faqimg.webp" alt="Hero karrusel" />
   <Button buttontext="More FAQ’s here" />
   <Footer />
+</MainLayout> -->
+<MainLayout>
+  <Header />
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <img class="hero-image" src="../imgs/hero.webp" alt="Hero karrusel" />
+    <div class="hero-content">
+      <h1>KARRUSEL FESTIVAL<br />28. - 30. AUGUST 2025</h1>
+      <p>Come join us for a ride on Refshaleøen!</p>
+      <div class="countdown-timer">
+        <p>345 days : 10 hours : 37 minutes left</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Section -->
+  <div class="search-section">
+    <Search />
+  </div>
+
+  <!-- Welcome and map Section  -->
+   <section class="wm">
+   <section class="welcome">
+  <h2>Welcome to Karrusel Festival!</h2>
+  <img src="../imgs/img2.webp" alt="karruselpladsen"/>
+</section>
+  <section class="map-section">
+    <a href="/map.astro">
+      <img src="../imgs/map.webp" alt="Festival Map" class="map-image" />
+    </a>
+  </section>
+</section>
+
+  <!-- Lineup Section with Animated App Buttons -->
+  <section class="lineup-section">
+    <h2 class="lineup">
+      <a href="/lineup" class="lineup-link">LINEUP 2025 &rarr;</a>
+    </h2>
+    <p>See this year's artists here</p>
+  </section>
+  <div class="app-buttons">
+    <a href="#" class="app-button">GET THE APP FOR IPHONE</a>
+    <a href="#" class="app-button">GET THE APP FOR ANDROID</a>
+  </div>
+
+  <!-- General Information Section -->
+  <section class="info-section">
+    <div class="info-content">
+      <h2>GENERAL INFORMATION</h2>
+      <p>En paragraf med generel information og lidt om Karrusel Festival.</p>
+      <p>Lorem ipsum dolor sit amet...</p>
+    </div>
+    <img src="../imgs/artist.webp" alt="Artist Image" class="info-image" />
+  </section>
+
+  <!-- FAQ Section -->
+<FaqBoks/>
+
+  <Footer />
 </MainLayout>
+
+<style>
+  h2,
+  h3,
+  p {
+    color: var(--quaternary);
+  }
+  .lineup {
+    color: var(--secondary);
+  }
+
+  
+  .hero-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden; /
+  }
+
+  /* Hero image settings */
+  .hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+  }
+
+ 
+  .hero-content h1 {
+    white-space: nowrap;
+    width: 100%;
+   
+  }
+
+  .hero-content p {
+    margin: 10px 0; 
+  }
+  /*search*/
+  .search-section {
+  display: flex;
+  justify-content: center; 
+  margin: 40px;
+}
+
+
+
+ /* wm section */
+  .wm {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  padding: 20px; 
+}
+
+/* welcome section */
+.welcome {
+  text-align: center; 
+  margin-bottom: 20px; 
+}
+.welcome h2 {
+  position: absolute; 
+  transform: translate(-1%, 400%) rotate(-10deg); 
+  font-size: 24px;
+  white-space: nowrap; 
+}
+
+.welcome img {
+  max-width: 100%; 
+  height: auto; 
+}
+
+/* map section */
+.map-section {
+  width: 100%; 
+  display: flex; 
+  justify-content: center; 
+}
+
+.map-image {
+  max-width: 100%; 
+  height: auto; 
+}
+
+.lineup-link {
+  display: flex;
+  justify-content: center;
+  color: inherit; /* Arver farven fra h2 */
+  text-decoration: none; /* Ingen understregning */
+  font-size: 64px;
+  font-family: var(--font1);
+}
+.lineup-link:hover{
+  transform: scale(1.1);
+}
+
+
+
+
+  /*app*/
+  .app-button {
+    animation: slide 10s linear infinite;
+  }
+  @keyframes slide {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+</style>

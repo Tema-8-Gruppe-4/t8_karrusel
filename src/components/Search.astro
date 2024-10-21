@@ -1,54 +1,57 @@
 ---
 
 ---
-<!--Katinka-->
-<!--OBS hvis tid ændre style når man har klikket i søgefelt-->
+
+<!--Katinka--><!--OBS hvis tid ændre style når man har klikket i søgefelt-->
 <form>
-    <div class="search">
-      <span class="search-icon material-symbols-outlined"><img src="svg/search.svg" alt="searchicon"></span>
-      <input class="search-input" type="search" placeholder="Search" />
-    </div>
+  <div class="search">
+    <span class="search-icon material-symbols-outlined"
+      ><img src="svg/search.svg" alt="searchicon" /></span
+    >
+    <input class="search-input" type="search" placeholder="Search" />
+  </div>
 </form>
 
 <style>
-.search {
-width: max-content;
-  display: flex;
-  align-items: center;
-  border-radius: 75px;
-  background: var(--tertiary);
-  width: 60%;
-  height: 35px;
-  transition: box-shadow 0.25s;
-  margin-left: 2rem;
-}
-.search img {
-display: flex;
-height: 20px;
-}
-.search:focus-within {
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
-}
-.search-input {
-  font-size: 14px;
-  font-family: var(--font3);
-  color: var(--primary);
-  margin-left: 1rem;
-  outline: none;
-  border: none;
-  background: transparent;
-  width: 350px;
-}
-.search-input::placeholder, .search-icon {
-  color: var(--primary);
-  margin-left: 2rem;
-}
-@media (min-width: 800px) {
-.search {
-height: 50px;
-}
-.search img {
-height: 30px;
-}
-}
+  .search {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    border-radius: 75px;
+    background: var(--tertiary);
+    width: 50vw;
+    height: 35px;
+    transition: box-shadow 0.25s;
+    margin-left: 2rem;
+  }
+  .search img {
+    display: flex;
+    height: 20px;
+  }
+  .search:focus-within {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+  }
+  .search-input {
+    font-size: 14px;
+    font-family: var(--font3);
+    color: var(--primary);
+    margin-left: 1rem;
+    outline: none;
+    border: none;
+    background: transparent;
+    width: 350px;
+  }
+  .search-input::placeholder,
+  .search-icon {
+    color: var(--primary);
+    margin-left: 2rem;
+  }
+  @media (min-width: 800px) {
+    .search {
+      height: 50px;
+    }
+    .search img {
+      height: 30px;
+    }
+  }
 </style>

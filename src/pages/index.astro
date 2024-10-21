@@ -1,23 +1,247 @@
 ---
 
 import MainLayout from "../layout/MainLayout.astro";
-import ScrollToTop from "../components/ScrollToTop.astro";
-import GoBackArrow from "../components/GoBackArrow.astro";
+import Header from "../layout/Header.astro";
+import Search from "../components/Search.astro";
+import Footer from "../layout/Footer.astro";
+import Button from "../components/Button.astro";
+import FaqBoks from "../components/FaqBoks.astro";
 ---
 
-<!-- <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html> -->
-<GoBackArrow/>
-<ScrollToTop />
 
-<MainLayout/>
+<MainLayout>
+  <Header />
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <img class="hero-image" src="../imgs/hero.webp" alt="Hero karrusel" />
+    <div class="hero-content">
+      <h1>KARRUSEL FESTIVAL<br />28. - 30. AUGUST 2025</h1>
+      <p>Come join us for a ride on Refshaleøen!</p>
+      <div class="countdown-timer">
+        <p>345 days : 10 hours : 37 minutes left</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Section -->
+  <div class="search-section">
+    <Search />
+  </div>
+
+  <!-- Welcome and map Section  -->
+   <section class="wm">
+   <section class="welcome">
+  <h2>Welcome to Karrusel Festival!</h2>
+  <img src="../imgs/img2.webp" alt="karruselpladsen"/>
+</section>
+  <section class="map-section">
+    <a href="/map.astro">
+      <img src="../imgs/map.webp" alt="Festival Map" class="map-image" />
+    </a>
+  </section>
+</section>
+
+  <!-- Lineup Section with Animated App Buttons -->
+  <section class="lineup-section">
+    <h2 class="lineup">
+      <a href="/lineup" class="lineup-link">LINEUP 2025</a>
+    </h2>
+    <p>See this year's artists here</p>
+  </section>
+  <div class="app-slider">
+    <a href="#" class="app">GET THE APP FOR IPHONE</a>
+    <a href="#" class="app-android">GET THE APP FOR ANDROID</a>
+  </div>
+
+  <!-- General Information Section -->
+  <section class="info-section">
+    <div class="info-content">
+      <h2>GENERAL INFORMATION</h2>
+      <p>3 days of house, disco and techno in the woods.
+
+        36 artists across 3 stages including Anetha, Ben Böhmer, HorsegiirL, Job Jobse, Ki/Ki, Marlon Hoffstadt, Nene H, Sama’ Abdulhadi, Viken Arman, X CLUB.
+        
+        Karrusel takes place at a secluded green spot on Refshaleøen in central Copenhagen.</p>
+
+        <h3>Adresse</h3>
+      <p>Refshalevej 193, 1432 Copenhagen</p>
+      <h3>Opening Hours</h3>
+      <ul>
+        <li>
+          Thursday 22 Aug 2024: 18.00-01.00
+        </li>
+        <li>Friday 23 Aug 2024: 18.00-04.00</li>
+        <li>Saturday 24 Aug 2024: 18.00-03.00</li>
+      </ul>
+      <h3>Festival experience</h3>
+      <p>Karrusel believes in the right to a harassment-free festival experience. We believe in the right of everyone to express themselves. Karrusel welcomes everybody – all with their different orientations, experiences, histories and backgrounds. Karrusel only exists if everyone takes care of each other, respects their own and others boundaries, embraces diversity and acts as a part of the community.</p>
+      <p>If you feel unsafe, please reach out to our awareness team. They will be wearing a pink vests and walk around the site and be at their base (see on this map). Ask any festival staff and they will guide you to the them.</p>
+    </div>
+    <img src="../imgs/img3.webp" alt="Artist Image" class="info-image" />
+  </section>
+
+  <!-- FAQ Section -->
+<FaqBoks/>
+
+  <Footer />
+</MainLayout>
+
+<style>
+  h2,
+  h3,
+  p {
+    color: var(--quaternary);
+  }
+  .lineup {
+    color: var(--secondary);
+  }
+
+  
+  .hero-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden; /
+  }
+
+  /* Hero image settings */
+  .hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+  }
+
+ 
+  .hero-content h1 {
+    white-space: nowrap;
+    width: 100%;
+   
+  }
+
+  .hero-content p {
+    margin: 10px 0; 
+  }
+  /*search*/
+  .search-section {
+  display: flex;
+  justify-content: center; 
+  margin: 40px;
+}
+
+
+
+ /* wm section */
+  .wm {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  padding: 20px; 
+}
+
+/* welcome section */
+.welcome {
+  text-align: center; 
+  margin-bottom: 20px; 
+}
+.welcome h2 {
+  position: absolute; 
+  transform: translate(-1%, 400%) rotate(-10deg); 
+  font-size: 5.5vw;
+  white-space: nowrap; 
+}
+
+.welcome img {
+  max-width: 80vw; 
+  height: auto; 
+}
+
+/* map section */
+.map-section {
+  width: 100%; 
+  display: flex; 
+  justify-content: center; 
+}
+
+.map-image {
+  max-width: 100%; 
+  height: auto; 
+}
+
+.lineup-link {
+  display: flex;
+  justify-content: center;
+  color: inherit; /* Arver farven fra h2 */
+  text-decoration: none; /* Ingen understregning */
+  font-size: 64px;
+  font-family: var(--font1);
+}
+.lineup-link:hover{
+  transform: scale(1.1);
+}
+
+.lineup-section p{
+  display: flex;
+  justify-content: center;
+}
+
+
+
+  /*app*/
+  .app {
+  display: inline-block;
+  animation: slide 20s linear infinite;
+  white-space: nowrap;
+}
+.app-android {
+  display: inline-block;
+  animation: slide 20s linear infinite;
+  animation-delay: 2s;
+  white-space: nowrap;
+}
+.app-slider {
+  display: flex;
+  justify-content: space-between;
+  /* width: 100%; 
+  overflow: hidden; */
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(200%);
+  }
+
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+/*info*/
+.info-section{
+  padding: 20px;
+}
+.info-content h2, .info-content p, .info-content h3, .info-content ul{
+  margin-top: 30px;
+}
+
+.info-content li{
+  list-style: none;
+  color: var(--quaternary);
+}
+
+.info-image {
+  max-width: 100%; 
+  height: auto; 
+  margin-top: 20px;
+  
+}
+</style>

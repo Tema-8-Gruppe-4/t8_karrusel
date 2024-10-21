@@ -1,0 +1,30 @@
+---
+import MainLayout from "../../layout/MainLayout.astro";
+import Header from "../../layout/Header.astro";
+import Footer from "../../layout/Footer.astro";
+import ScrollToTop from "../../components/ScrollToTop.astro";
+import GoBackArrow from "../../components/GoBackArrow.astro";
+
+
+import ArtistInfo from "../../components/ArtistInfo.astro";
+const url = "https://xnuptxxrxfdladlzrict.supabase.co";
+const artists = await fetch(url).then(res=>res.json());
+---
+
+<MainLayout>
+    <Header/>
+    <GoBackArrow/>
+
+
+    <ul>
+        {
+            artists.map((artist) => (
+                <ArtistInfo artist={artist}/>
+            ))
+        }
+    </ul>
+
+    
+    <ScrollToTop />
+    <Footer/>
+</MainLayout>

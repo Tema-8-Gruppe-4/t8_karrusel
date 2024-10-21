@@ -14,9 +14,17 @@ const { buttontext } = Astro.props;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 16px;
+    font-family: var(--font2);
   }
 
   .button:hover {
     background-color: var(--quinary);
+  }
+  @media (min-width: 800px) {
+    .button {
+      padding: 15px 30px; /* Gør knappen større */
+      font-size: 20px; /* Gør teksten større */
+    }
   }
 </style>

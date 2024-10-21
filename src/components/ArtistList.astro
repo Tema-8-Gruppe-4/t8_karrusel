@@ -3,7 +3,7 @@ import ArtistNavn from "../components/ArtistNavn.astro"
 ---
 <!--Katinka -->
 
-<article>
+<article id="artist_list">
     <ArtistNavn/>
     <ArtistNavn/>
     <ArtistNavn/>
@@ -20,5 +20,11 @@ import ArtistNavn from "../components/ArtistNavn.astro"
     article {
         margin-left: 3rem;
         padding-bottom: 8rem;
+    }
+
+    @media (max-width: 800px) {
+        #artist_list {
+            text-align: center;
+        }
     }
 </style>

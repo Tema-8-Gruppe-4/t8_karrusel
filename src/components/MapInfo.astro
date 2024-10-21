@@ -1,4 +1,107 @@
 ---
-
+const { activeBox } = Astro.props; // Get the active box from props
 ---
-<!--Maja -->
+
+<div class={`info-box ${activeBox ? 'show' : 'hide'}`}>
+  {activeBox === 'foodCourt' && (
+    <article>
+      <h3>FOOD COURT</h3>
+      <dl class="FoodCourtList">
+        <dt class="DTtext">Taqu - Traditional Mexican food</dt>
+        <dd class="DDtext">11:00-01:00</dd>
+        <dt class="DTtext">Bao Wow - Asian street food (Bao buns)</dt>
+        <dd class="DDtext">14:00-00:00</dd>
+        <dt class="DTtext">GrillX - American style grill</dt>
+        <dd class="DDtext">14:00-00:00</dd>
+        <dt class="DTtext">Fries before guys - loaded fries</dt>
+        <dd class="DDtext">11:00-01:00</dd>
+        <dt class="DTtext">Bella Burgers - Burgers</dt>
+        <dd class="DDtext">14:00-01:00</dd>
+      </dl>
+    </article>
+  )}
+
+  {activeBox === 'makeupSalon' && (
+    <article>
+      <h3>MAKEUP SALON</h3>
+      <p>Visit our makeup salon, use our vanities to freshen up, or get help from staff.</p>
+      <dl class="MakeupSalonList">
+        <dt class="DTtext">Hair cuts and decals - 3 chairs</dt>
+        <dd class="DDtext">12:00-19:00</dd>
+        <dt class="DTtext">Makeup - 4 chairs</dt>
+        <dd class="DDtext">12:00-21:00</dd>
+        <dt class="DTtext">Face Paint - 2 chairs</dt>
+        <dd class="DDtext">12:00-00:00</dd>
+      </dl>
+      <p>There are 12 vanities you can use for free; we just ask you to keep them clean and be mindful of each other.</p>
+    </article>
+  )}
+
+  {activeBox === 'dreamZone' && (
+    <article>
+      <h3>DREAM ZONE</h3>
+      <p>Step into the Dream Zone, a tranquil oasis designed to give your mind and ears a break from the festival buzz. Relax, unwind, and let calming sounds wash over you in this peaceful space.</p>
+      <p>Open all days from 15:00 to 01:00.</p>
+    </article>
+  )}
+
+  {activeBox === 'bonfire' && (
+    <article>
+      <h3>BONFIRE</h3>
+      <p>Gather around the warmth of our Bonfire, where the flickering flames create a magical ambiance. Settle onto our rustic logs or bring your own comfy chair to relax and soak in the cozy atmosphere. Enjoy a steaming cup of hot chocolate, with the rich aroma filling the air, and let the comforting vibes wash over you. Whether you're sharing stories with friends or simply taking a moment to unwind, the Bonfire is the perfect spot to enjoy the festival's enchanting evenings.</p>
+      <p>The Bonfire gets started at 20:00</p>
+    </article>
+  )}
+
+  {activeBox === 'AerialPerformance' && (
+    <article>
+      <h3>Aerial Performance</h3>
+      <p>Prepare to be mesmerized at the Aerial Performance area, where the sky comes alive with breathtaking displays of artistry and daring stunts. From graceful aerial silks and thrilling trapeze acts to dazzling hoop performances and high-flying rope stunts, this space offers an unforgettable spectacle. As night falls, the performers take to the sky amidst a backdrop of stunning light shows and fiery displays, igniting the atmosphere with wonder and excitement. This fusion of fire, light, and aerial acrobatics creates a magical experience you won’t want to miss.</p>
+      <p>Starts at 20:00</p>
+    </article>
+  )}
+
+  {activeBox === 'PhotoBooth' && (
+    <article>
+      <h3>Photobooth</h3>
+      <p>Capture your festival memories at the Photo Booth! With a variety of fun effects and backdrops to choose from, you can snap the perfect picture with friends or solo. Whether you’re looking for a classic shot, something quirky, or a themed photo, we’ve got you covered. Your photos can be printed in different sizes, so you can take home a lasting memento of your experience. Strike a pose, have fun, and leave with a forever memory that will remind you of this unforgettable event!</p>
+      <p>1 photostrip 25,- kr</p>
+      <p>2 photostrip 40,- kr</p>
+      <p>Big photo 15,- kr</p>
+    </article>
+  )}
+</div>
+
+<style>
+  .info-box {
+    position: absolute;
+    top: 10%;  
+    left: 10%; 
+    width: 80%; 
+    background-color: #383838;
+    padding: 20px;
+    border: 1px solid #91ff36;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 2000; 
+    display: none; 
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .info-box.show {
+    display: block;
+    opacity: 1;
+  }
+
+  .info-box.hide {
+    display: none;
+    opacity: 0;
+  }
+
+  .info-box p {
+    font-size: 18px;
+  }
+
+  .info-box h3 {
+    font-size: 30px;
+  }
+</style>

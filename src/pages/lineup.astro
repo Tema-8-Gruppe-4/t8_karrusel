@@ -6,6 +6,8 @@ import Button from "../components/Button.astro";
 import ProgramSection from "../components/ProgramSection.astro";
 import ArtistList from "../components/ArtistList.astro";
 import Footer from "../layout/Footer.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
+import GoBackArrow from "../components/GoBackArrow.astro";
 ---
 <!--Katinka -->
 
@@ -13,6 +15,7 @@ import Footer from "../layout/Footer.astro";
 <Header/>
   <h1>LINEUP 2025</h1>
  <Search/>
+ <GoBackArrow/>
   <Button buttontext="Check out this year’s artists" />
   <h1>PROGRAM</h1>
   <nav>
@@ -28,6 +31,7 @@ import Footer from "../layout/Footer.astro";
 <ProgramSection/>
 <h1>THIS YEAR'S ARTISTS</h1>
 <ArtistList/>
+<ScrollToTop />
   <Footer/>
 </MainLayout>
 

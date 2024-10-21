@@ -1,0 +1,59 @@
+---
+
+---
+
+
+<button class="scroll-to-top" id="scrollButton">
+    <img src="/svg/Arrowup.svg" alt="arrow to get up" />
+</button>
+
+<style>
+.scroll-to-top {
+    position: fixed;  
+    bottom: 20px;  
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust position back by half the width */
+    background-color: transparent; 
+    border: none;    
+    border-radius: 10px; 
+    padding: 10px;   
+    cursor: pointer;     
+    z-index: 1000;   
+    display: none; /* Initially hidden */
+}
+.scroll-to-top img {
+    width: 55px;
+    height: auto;
+}
+.scroll-to-top:hover {
+    bottom: 30px;  
+    transition: ease-in-out 0.3s;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollButton');
+
+    // Function to scroll to top
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' 
+        });
+    }
+
+    // Function to toggle the visibility of the scroll button
+    function toggleScrollButton() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollButton.style.display = 'block';
+        } else {
+            scrollButton.style.display = 'none';
+        }
+    }
+
+    // Add event listeners
+    scrollButton.addEventListener('click', scrollToTop);
+    window.addEventListener('scroll', toggleScrollButton);
+});
+</script>

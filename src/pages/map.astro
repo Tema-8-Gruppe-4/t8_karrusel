@@ -1,14 +1,30 @@
 ---
-import "../styles/lilla.css";
+// import "../styles/lilla.css";
 import MainLayout from "../layout/MainLayout.astro";
 import Header from "../layout/Header.astro";
 import Footer from "../layout/Footer.astro";
 import Button from "../components/Button.astro";
+import Interactivemap from "../components/interactivemap.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
+import GoBackArrow from "../components/GoBackArrow.astro";
 ---
 <!--Maja -->
 
 <MainLayout>
   <Header />
+  <h1>MAP OF THE FESTIVAL AREA</h1>
+  <GoBackArrow/>
   <Button buttontext="Lineup 2025" />
+  <Interactivemap/>
+
+ <ScrollToTop />
   <Footer />
 </MainLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    font-size: 180px;
+  }
+</style>
+ 

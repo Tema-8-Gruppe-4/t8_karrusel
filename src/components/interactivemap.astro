@@ -1,0 +1,28 @@
+---
+import Mapbuttons from "./mapbuttons.astro"
+import MapInfo from "./MapInfo.astro"
+---
+
+
+<div class="interactivemap">
+    <img src="/svg/map.svg" alt="map of festivalsite" class="map_image" width="100%" height="100%"/>
+    <Mapbuttons/>
+
+</div>
+<MapInfo/>
+
+<style>
+  
+     .interactivemap {
+        position: relative;               
+        margin: 0 auto;     
+    }
+
+    
+    .map_image {
+        width: 100%;        
+        height: 100%;        
+        object-fit: cover;   
+        display: block;     
+    }
+</style>

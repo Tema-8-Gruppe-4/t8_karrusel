@@ -1,16 +1,24 @@
 ---
-import "../styles/groen.css";
+// import "../styles/groen.css";
+
 import MainLayout from "../layout/MainLayout.astro";
-import Header from "../layout/Header.astro";
-import Search from "../components/Search.astro";
-import Footer from "../layout/Footer.astro";
-import Button from "../components/Button.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
+import GoBackArrow from "../components/GoBackArrow.astro";
 ---
 
-<MainLayout>
-  <Header />
-  <h1>KARRUSEL FESTIVAL<br />28. - 30. AUGUST 2025</h1>
-  <Search />
-  <Button buttontext="More FAQ’s here" />
-  <Footer />
-</MainLayout>
+<!-- <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<h1>Astro</h1>
+	</body>
+</html> -->
+<GoBackArrow/>
+<ScrollToTop />
+
+<MainLayout/>

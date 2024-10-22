@@ -1,64 +1,93 @@
----
+<img src="/svg/SVG/aerialperformance.svg" alt="Aerial Performance" class="svg-buttons AerialPerformance" data-info="AerialPerformance" />
+<img src="/svg/SVG/bonfire.svg" alt="Bonfire" class="svg-buttons Bonfire" data-info="Bonfire" />
+<img src="/svg/SVG/foodcourt.svg" alt="Food Court" class="svg-buttons FoodCourt" data-info="FoodCourt" />
+<img src="/svg/SVG/photobooth.svg" alt="Photo Booth" class="svg-buttons PhotoBooth" data-info="PhotoBooth" />
+<img src="/svg/SVG/makeupsalon.svg" alt="Makeup Salon" class="svg-buttons MakeupSalon" data-info="MakeupSalon" />
+<img src="/svg/SVG/dreamzone.svg" alt="Dream Zone" class="svg-buttons DreamZone" data-info="DreamZone" />
 
----
+<script client:load>
+  const svgButtons = document.querySelectorAll('.svg-buttons');
+  let activeOverlay = null;
 
-<img src="/svg/SVG/aerialperformance.svg" alt="knap til info om aerial performance" class="AerialPerformance svg-buttons"/>
-<img src="/svg/SVG/bonfire.svg" alt="knap til info om bonfire" class="Bonfire svg-buttons"/>
-<img src="/svg/SVG/foodcourt.svg" alt="knap til info om food court" class="FoodCourt svg-buttons"/>
-<img src="/svg/SVG/photobooth.svg" alt="knap til info om photo booth" class="PhotoBooth svg-buttons"/>
-<img src="/svg/SVG/photobooth.svg" alt="knap til info om photo booth" class="PhotoBooth2 svg-buttons"/>
-<img src="/svg/SVG/makeupsalon.svg" alt="knap til info om makeup salon" class="MakeupSalon svg-buttons"/>
-<img src="/svg/SVG/dreamzone.svg" alt="knap til info om dream zone" class="DreamZone svg-buttons"/>
+  svgButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+      const infoType = button.getAttribute('data-info');
+      const overlay = document.getElementById(`${infoType}-info`);
+
+      if (overlay) {
+        // Show the corresponding overlay
+        overlay.classList.add('show');
+        overlay.classList.remove('hide');
+        activeOverlay = overlay;
+      }
+
+      // Prevent immediate closing
+      e.stopPropagation();
+    });
+  });
+
+  // Close overlay when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!activeOverlay) return; // If no active overlay, do nothing
+
+    const clickedOutsideOverlay = !activeOverlay.contains(e.target);
+    const clickedOutsideButton = !e.target.classList.contains('svg-buttons');
+
+    if (clickedOutsideOverlay && clickedOutsideButton) {
+      activeOverlay.classList.remove('show');
+      activeOverlay.classList.add('hide');
+      activeOverlay = null;
+    }
+  });
+</script>
 
 <style>
-    .svg-buttons {
-    position: absolute; 
-    background: none;    
-    border: none;       
-    cursor: pointer;     
+  .svg-buttons {
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
-    .AerialPerformance{
-        top: 77%;  
-        left: 19.5%; 
-        width: 3vw;
-    }
 
-    .Bonfire {
-        top: 34.5%;  
-        left: 78%; 
-        width: 4.5vw;
-    }
+  .svg-buttons:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+  }
 
-    .FoodCourt {
-        top: 52.5%;  
-        left: 67%; 
-        width: 7vw;
-    }
 
-    .PhotoBooth {
-        top: 67%;  
-        left: 37%; 
-        transform: rotate(55deg);
-        width: 3.5vw;
-    }
+  .AerialPerformance {
+    top: 77%;
+    left: 19.5%;
+    width: 3vw;
+  }
 
-    .PhotoBooth2 {
-        top: 19%;  
-        left: 64%; 
-        transform: rotate(55deg);
-        width: 3.5vw;
-    }
+  .Bonfire {
+    top: 34.5%;
+    left: 78%;
+    width: 4.5vw;
+  }
 
-    .MakeupSalon{
-        top: 31.5%;  
-        left: 73.5%; 
-        width: 4vw;
-    }
+  .FoodCourt {
+    top: 52.5%;
+    left: 67%;
+    width: 7vw;
+  }
 
-    .DreamZone {
-        top: 66%;  
-        left: 48.8%; 
-        width: 11vw;
-    }
+  .PhotoBooth {
+    top: 67%;
+    left: 36.5%;
+    width: 3.5vw;
+  }
 
+  .MakeupSalon {
+    top: 31.5%;
+    left: 73.5%;
+    width: 4vw;
+  }
+
+  .DreamZone {
+    top: 66%;
+    left: 48.8%;
+    width: 11vw;
+  }
 </style>

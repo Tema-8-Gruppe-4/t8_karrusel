@@ -45,14 +45,30 @@ import Button from "./Button.astro";
 
 <style>
   .faq-section {
+    position: relative;
     padding: 20px;
     background-image: url("../imgs/faqimg.webp");
     background-size: cover;
     background-position: center;
-    fill-opacity: #6d2bc44f;
+  }
+  .faq-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(80, 34, 118, 0.5);
+    filter: blur(3px); /* Tilføj en sløring eller et andet filter her */
+    z-index: 1;
   }
 
-  /* Mobile-first: Display elements in a column for small screens */
+  .faq-items,
+  .button-container,
+  h2 {
+    position: relative;
+    z-index: 2;
+  }
   .faq-items {
     display: flex;
     flex-direction: column;
@@ -75,6 +91,7 @@ import Button from "./Button.astro";
   .faq-section h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: var(--quaternary);
   }
 
   .faq-section h3,
@@ -82,6 +99,9 @@ import Button from "./Button.astro";
     color: var(--quaternary);
   }
 
+  .faq-section p {
+    margin-top: 20px;
+  }
   .button-container {
     display: flex;
     justify-content: center;
@@ -89,7 +109,7 @@ import Button from "./Button.astro";
   }
 
   /* Tablet and larger: Create grid layout for larger screens */
-  @media (min-width: 768px) {
+  @media (min-width: 800px) {
     .faq-items {
       display: grid;
       grid-template-columns: repeat(12, 1fr); /* 12 kolonner */

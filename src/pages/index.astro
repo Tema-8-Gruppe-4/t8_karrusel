@@ -52,7 +52,9 @@ import FaqBoks from "../components/FaqBoks.astro";
   <div class="app-slider">
     <a href="#" class="app">GET THE APP FOR IPHONE</a>
     <a href="#" class="app-android">GET THE APP FOR ANDROID</a>
-  </div>
+ 
+   </div>
+
 
   <!-- General Information Section -->
   <section class="info-section">
@@ -125,7 +127,7 @@ import FaqBoks from "../components/FaqBoks.astro";
   .hero-content h1 {
     white-space: nowrap;
     width: 100%;
-   
+   /* margin: 20px; */
   }
 
   .hero-content p {
@@ -184,6 +186,7 @@ import FaqBoks from "../components/FaqBoks.astro";
   text-decoration: none; /* Ingen understregning */
   font-size: 64px;
   font-family: var(--font1);
+  letter-spacing: 3px;
 }
 .lineup-link:hover{
   transform: scale(1.1);
@@ -197,6 +200,8 @@ import FaqBoks from "../components/FaqBoks.astro";
 
 
   /*app*/
+
+
   .app {
   display: inline-block;
   animation: slide 20s linear infinite;
@@ -210,14 +215,15 @@ import FaqBoks from "../components/FaqBoks.astro";
 }
 .app-slider {
   display: flex;
-  justify-content: space-between;
-  /* width: 100%; 
-  overflow: hidden; */
+  justify-content: space-evenly;
+  margin: 30px;
+  overflow: hidden;
+
 }
 
 @keyframes slide {
   0% {
-    transform: translateX(200%);
+    transform: translateX(180%);
   }
 
   100% {
@@ -229,13 +235,15 @@ import FaqBoks from "../components/FaqBoks.astro";
 .info-section{
   padding: 20px;
 }
-.info-content h2, .info-content p, .info-content h3, .info-content ul{
-  margin-top: 30px;
+.info-content p, .info-content ul{
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .info-content li{
   list-style: none;
   color: var(--quaternary);
+  line-height: 25px;
 }
 
 .info-image {
@@ -245,7 +253,7 @@ import FaqBoks from "../components/FaqBoks.astro";
   margin-bottom: 20px;
 }
 
-@media (min-width: 500px){
+@media (min-width: 800px){
 /* 
 .hero-section h1{
   margin: 20px;

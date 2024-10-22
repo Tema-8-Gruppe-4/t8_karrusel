@@ -7,8 +7,6 @@ import ProgramSection from "../../components/ProgramSection.astro";
 import Footer from "../../layout/Footer.astro";
 import ScrollToTop from "../../components/ScrollToTop.astro";
 import GoBackArrow from "../../components/GoBackArrow.astro";
-
-
 import ArtistInfo from "../../components/ArtistInfo.astro";
 
 const url = "https://xnuptxxrxfdladlzrict.supabase.co/rest/v1/Kunstnere";
@@ -25,12 +23,10 @@ console.log(artists);
 
 <MainLayout>
     <Header/>
-    <GoBackArrow/>
-
     <h1>LINEUP 2025</h1>
+    <GoBackArrow/>
     <Search/>
-    <a href="#artist_list"><Button buttontext="Check out this year’s artists"/></a>
-   
+    <a class= "button" href="#artist_list"><Button buttontext="Check out this year’s artists"/></a>
      <h1>PROGRAM</h1>
      <nav>
        <a href="#thursday">- THURSDAY</a>
@@ -44,7 +40,6 @@ console.log(artists);
    <h3 id="saturday">- SATURDAY</h3>
    <ProgramSection/>
    <h1>THIS YEAR'S ARTISTS</h1>
-
     <ul>
         {
             artists.map((artist) => (
@@ -58,7 +53,7 @@ console.log(artists);
 </MainLayout>
 
 <style>
-
+/**FONTS */
 @font-face {
   font-family: "jhc_audemarsmedium";
   src: url("/public/fonts/audemars/jhcaudemars-medium-webfont.woff2") format("woff2"),
@@ -76,16 +71,19 @@ console.log(artists);
   font-style: normal;
   font-display: swap;
 }
-
     h1 {
     margin: 5rem;
     }
     a {
     margin-left: 1rem;
     }
+    .button {
+        text-decoration: none;
+    }
     h3 {
     margin-top: 3rem;
     margin-left: 2rem;
+    
     }
     nav {
         display: flex;
@@ -93,6 +91,9 @@ console.log(artists);
     }
     #artist_list {
         text-decoration: none; /**OBS væk med linie under skrift, how???? */
+    }
+    ul {
+        margin-bottom: 7rem;
     }
     @media (max-width: 800px){
         h1 {

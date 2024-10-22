@@ -2,8 +2,34 @@
 const {artist} = Astro.props;
 ---
 
-<li>
+<!--Katinka Artister til artistlisten -->
+
+<li id="artist_list">
     <a href={`/artists/${artist.id}`}>
     <h3>{artist.name}</h3>
     </a>
 </li>
+
+<style>
+li {
+    margin-bottom: 2rem;
+    margin-left: 8rem;
+    list-style: none;
+    }
+h3 {
+    color: white;
+    font-size: 32px;
+    text-decoration: none;
+    font-display: capitalize;
+    }
+    a {
+        text-decoration: none;
+    }
+@media (max-width: 800px) {
+#artist_list {
+    text-align: center;
+    margin-left: 0rem;
+    
+    }
+}
+</style>

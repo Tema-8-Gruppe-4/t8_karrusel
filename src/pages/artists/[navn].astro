@@ -1,0 +1,55 @@
+---
+import MainLayout from '../../layout/MainLayout.astro';
+import Header from '../../layout/Header.astro';
+import Footer from '../../layout/Footer.astro';
+
+export async function getStaticPaths() {
+    const url = "https://xnuptxxrxfdladlzrict.supabase.co/rest/v1/Kunstnere";
+    const options = {
+      headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhudXB0eHhyeGZkbGFkbHpyaWN0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzQ1NjAsImV4cCI6MjA0NDIxMDU2MH0.RGy9b8YR0QZ5kbRBGPOLnBDCk0uhTzlYqKZgTkuw6HQ",
+          }
+    }
+    
+    const artists = await fetch(url, options).then(res=>res.json())
+    
+    return artists.map(artist => ({
+        params: { navn: artist.id }, // [artist]=artist.slug
+        props: { artist } // send al data med som props
+      }))
+  }
+  
+  const { artist } = Astro.props;
+  console.log(artist) // artist.name, artist.image osv.
+---
+<MainLayout>
+<Header/>
+
+  <h1>{artist.name}</h1>
+  <h3>{artist.location}, {artist.date}, {artist.time}</h3>
+  <p>{artist.description}</p>
+  <img src={artist.image} alt={artist.name}/>
+<Footer/>
+</Mainlayout>
+
+
+<style>
+@font-face {
+  font-family: "jhc_audemarsmedium";
+  src: url("/public/fonts/audemars/jhcaudemars-medium-webfont.woff2") format("woff2"),
+    url("/public/fonts/audemars/jhcaudemars-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "bacilus_grotesqueregular";
+  src: url("/public/fonts/bacilus/bacilusgrotesque-regular-webfont.woff2")
+      format("woff2"),
+    url("/public/fonts/bacilus/bacilusgrotesque-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+</style>

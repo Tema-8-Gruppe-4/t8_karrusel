@@ -1,6 +1,9 @@
 ---
 import MainLayout from "../../layout/MainLayout.astro";
 import Header from "../../layout/Header.astro";
+import Search from "../../components/Search.astro";
+import Button from "../../components/Button.astro";
+import ProgramSection from "../../components/ProgramSection.astro";
 import Footer from "../../layout/Footer.astro";
 import ScrollToTop from "../../components/ScrollToTop.astro";
 import GoBackArrow from "../../components/GoBackArrow.astro";
@@ -18,11 +21,29 @@ const options = {
 const artists = await fetch(url, options).then(res=>res.json());
 console.log(artists);
 ---
+<!--Lineup/Listview Katinka -->
 
 <MainLayout>
     <Header/>
     <GoBackArrow/>
 
+    <h1>LINEUP 2025</h1>
+    <Search/>
+    <a href="#artist_list"><Button buttontext="Check out this year’s artists"/></a>
+   
+     <h1>PROGRAM</h1>
+     <nav>
+       <a href="#thursday">- THURSDAY</a>
+       <a href="#friday">- FRIDAY</a>
+       <a href="#saturday">- SATURDAY</a>
+     </nav>
+     <h3 id="thursday">- THURSDAY</h3>
+   <ProgramSection/>
+   <h3 id="friday">- FRIDAY</h3>
+   <ProgramSection/>
+   <h3 id="saturday">- SATURDAY</h3>
+   <ProgramSection/>
+   <h1>THIS YEAR'S ARTISTS</h1>
 
     <ul>
         {
@@ -32,7 +53,50 @@ console.log(artists);
         }
     </ul>
 
-
     <ScrollToTop />
     <Footer/>
 </MainLayout>
+
+<style>
+
+@font-face {
+  font-family: "jhc_audemarsmedium";
+  src: url("/public/fonts/audemars/jhcaudemars-medium-webfont.woff2") format("woff2"),
+    url("/public/fonts/audemars/jhcaudemars-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "bacilus_grotesqueregular";
+  src: url("/public/fonts/bacilus/bacilusgrotesque-regular-webfont.woff2")
+      format("woff2"),
+    url("/public/fonts/bacilus/bacilusgrotesque-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+    h1 {
+    margin: 5rem;
+    }
+    a {
+    margin-left: 1rem;
+    }
+    h3 {
+    margin-top: 3rem;
+    margin-left: 2rem;
+    }
+    nav {
+        display: flex;
+        margin-left: 1.5rem;
+    }
+    #artist_list {
+        text-decoration: none; /**OBS væk med linie under skrift, how???? */
+    }
+    @media (max-width: 800px){
+        h1 {
+            text-align: center;
+    }
+} 
+</style>

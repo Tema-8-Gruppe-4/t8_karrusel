@@ -13,6 +13,7 @@
     url("fonts/audemars/jhcaudemars-medium-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "bacilus_grotesqueregular";
@@ -21,6 +22,7 @@
     url("fonts/bacilus/bacilusgrotesque-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 /**Anonymous Pro fra Google Fonts som linker til head i MainLayout**/
 .anonymous-pro-regular {
@@ -55,7 +57,7 @@ main {
   margin: 30px;
 }
 h1 {
-  font-family: var(--font1);
+  font-family: "jhc_audemarsmedium", sans-serif;
   font-size: 64px;
   color: var(--secondary);
 }

@@ -1,6 +1,6 @@
 ---
 export async function getStaticPaths() {
-    const url = "https://xnuptxxrxfdladlzrict.supabase.co";
+    const url = "https://xnuptxxrxfdladlzrict.supabase.co/rest/v1/Kunstnere";
     const artists = await fetch(url, {
         headers: {
             apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhudXB0eHhyeGZkbGFkbHpyaWN0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzQ1NjAsImV4cCI6MjA0NDIxMDU2MH0.RGy9b8YR0QZ5kbRBGPOLnBDCk0uhTzlYqKZgTkuw6HQ",

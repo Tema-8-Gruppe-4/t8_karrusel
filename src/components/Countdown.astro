@@ -23,7 +23,7 @@
 
 <script>
   // Sæt mål-datoen (skift til din ønskede dato og tid)
-  const targetDate = new Date("August 25, 2025 10:00:00").getTime();
+  const targetDate = new Date("August 28, 2025 10:00:00").getTime();
 
   const interval = setInterval(function () {
     const now = new Date().getTime();
@@ -38,7 +38,7 @@
 
     // Vis resultatet i elementet med id="countdown"
     document.getElementById("countdown").innerHTML =
-      days + "d " + hours + "t " + minutes + "m " + seconds + "s ";
+      days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 
     // Hvis nedtællingen er færdig, stop intervallet og vis en besked
     if (distance < 0) {

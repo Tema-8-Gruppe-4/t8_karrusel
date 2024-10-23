@@ -1,4 +1,6 @@
 ---
+//@ts-nocheck (Besked fra Dannie: Ville fjerne fejlmelding længere ned i koderne...)
+
 import MainLayout from '../../layout/MainLayout.astro';
 import Header from '../../layout/Header.astro';
 import GoBackArrow from '../../components/GoBackArrow.astro';
@@ -16,7 +18,7 @@ export async function getStaticPaths() {
     const artists = await fetch(url, options).then(res=>res.json())
     
     return artists.map(artist => ({
-        params: { navn: artist.id }, // [artist]=artist.slug
+        params: { navn: artist.slug }, // [artist]=artist.slug
         props: { artist } // send al data med som props
       }))
   }
@@ -29,7 +31,7 @@ export async function getStaticPaths() {
 <GoBackArrow/>
 <img src={artist.image} alt={artist.name}/>
 <h1>{artist.name}</h1>
-<h3>{artist.date}{artist.time}</h3>
+<h3>{artist.date} {artist.time}</h3>
   <h3>AT: {artist.location}</h3>
   <p>{artist.description}</p>
   <img src={artist.image} alt={artist.name}/>

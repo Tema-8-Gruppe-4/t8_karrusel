@@ -1,107 +1,99 @@
----
-const { activeBox } = Astro.props; // Get the active box from props
----
-
-<div class={`info-box ${activeBox ? 'show' : 'hide'}`}>
-  {activeBox === 'foodCourt' && (
-    <article>
+<div id="FoodCourt-info" class="info-box hide">
+  <article>
       <h3>FOOD COURT</h3>
-      <dl class="FoodCourtList">
-        <dt class="DTtext">Taqu - Traditional Mexican food</dt>
-        <dd class="DDtext">11:00-01:00</dd>
-        <dt class="DTtext">Bao Wow - Asian street food (Bao buns)</dt>
-        <dd class="DDtext">14:00-00:00</dd>
-        <dt class="DTtext">GrillX - American style grill</dt>
-        <dd class="DDtext">14:00-00:00</dd>
-        <dt class="DTtext">Fries before guys - loaded fries</dt>
-        <dd class="DDtext">11:00-01:00</dd>
-        <dt class="DTtext">Bella Burgers - Burgers</dt>
-        <dd class="DDtext">14:00-01:00</dd>
-      </dl>
-    </article>
-  )}
+      <p>Taqu - Traditional Mexican food</p>
+      <p>11:00-01:00</p>
+      <p>Bao Wow - Asian street food (Bao buns)</p>
+      <p>14:00-00:00</p>
+      <p>GrillX - American style grill</p>
+      <p>14:00-00:00</p>
+      <p>Fries before guys - loaded fries</p>
+      <p>11:00-01:00</p>
+      <p>Bella Burgers - Burgers</p>
+      <p>14:00-01:00</p>
+  </article>
+</div>
 
-  {activeBox === 'makeupSalon' && (
-    <article>
+<div id="MakeupSalon-info" class="info-box hide">
+  <article>
       <h3>MAKEUP SALON</h3>
-      <p>Visit our makeup salon, use our vanities to freshen up, or get help from staff.</p>
-      <dl class="MakeupSalonList">
-        <dt class="DTtext">Hair cuts and decals - 3 chairs</dt>
-        <dd class="DDtext">12:00-19:00</dd>
-        <dt class="DTtext">Makeup - 4 chairs</dt>
-        <dd class="DDtext">12:00-21:00</dd>
-        <dt class="DTtext">Face Paint - 2 chairs</dt>
-        <dd class="DDtext">12:00-00:00</dd>
-      </dl>
+      <p><em>Visit our makeup salon, use our vanities to freshen up, or get help from staff.</em></p>
+      <p><strong>Hair cuts and decals - 3 chairs</strong></p>
+      <p>12:00-19:00</p>
+      <p><strong>Makeup - 4 chairs</strong></p>
+      <p>12:00-21:00</p>
+      <p><strong>Face Paint - 2 chairs</strong></p>
+      <p>12:00-00.00</p>
       <p>There are 12 vanities you can use for free; we just ask you to keep them clean and be mindful of each other.</p>
-    </article>
-  )}
+  </article>
+</div>
 
-  {activeBox === 'dreamZone' && (
-    <article>
+<!-- Other info boxes -->
+
+<div id="DreamZone-info" class="info-box hide">
+  <article>
       <h3>DREAM ZONE</h3>
       <p>Step into the Dream Zone, a tranquil oasis designed to give your mind and ears a break from the festival buzz. Relax, unwind, and let calming sounds wash over you in this peaceful space.</p>
       <p>Open all days from 15:00 to 01:00.</p>
-    </article>
-  )}
+  </article>
+</div>
 
-  {activeBox === 'bonfire' && (
-    <article>
+<div id="Bonfire-info" class="info-box hide">
+  <article>
       <h3>BONFIRE</h3>
-      <p>Gather around the warmth of our Bonfire, where the flickering flames create a magical ambiance. Settle onto our rustic logs or bring your own comfy chair to relax and soak in the cozy atmosphere. Enjoy a steaming cup of hot chocolate, with the rich aroma filling the air, and let the comforting vibes wash over you. Whether you're sharing stories with friends or simply taking a moment to unwind, the Bonfire is the perfect spot to enjoy the festival's enchanting evenings.</p>
+      <p>Gather around the warmth of our Bonfire, where the flickering flames create a magical ambiance. Settle onto our rustic logs or bring your own comfy chair to relax and soak in the cozy atmosphere.</p>
       <p>The Bonfire gets started at 20:00</p>
-    </article>
-  )}
+  </article>
+</div>
 
-  {activeBox === 'AerialPerformance' && (
-    <article>
-      <h3>Aerial Performance</h3>
-      <p>Prepare to be mesmerized at the Aerial Performance area, where the sky comes alive with breathtaking displays of artistry and daring stunts. From graceful aerial silks and thrilling trapeze acts to dazzling hoop performances and high-flying rope stunts, this space offers an unforgettable spectacle. As night falls, the performers take to the sky amidst a backdrop of stunning light shows and fiery displays, igniting the atmosphere with wonder and excitement. This fusion of fire, light, and aerial acrobatics creates a magical experience you won’t want to miss.</p>
-      <p>Starts at 20:00</p>
-    </article>
-  )}
+<div id="PhotoBooth-info" class="info-box hide">
+  <article>
+    <h3>PHOTO BOOTH</h3>
+    <p>The festival's Photo Booth is a must-visit, featuring three spacious booths equipped with state-of-the-art cameras and a variety of fun filters, including vintage black-and-white and vibrant color splash. You can customize your backdrop and add props for an entertaining twist to your snaps. Whether you're posing solo or with friends, it's the perfect spot to capture unforgettable festival memories!</p>
+    <p>2x photo strips - 50,- kr.</p>
+    <p>1x photo strips - 30,- kr.</p>
+    <p>Big photo print - 40,- kr.</p>
+  </article>
+</div>
 
-  {activeBox === 'PhotoBooth' && (
-    <article>
-      <h3>Photobooth</h3>
-      <p>Capture your festival memories at the Photo Booth! With a variety of fun effects and backdrops to choose from, you can snap the perfect picture with friends or solo. Whether you’re looking for a classic shot, something quirky, or a themed photo, we’ve got you covered. Your photos can be printed in different sizes, so you can take home a lasting memento of your experience. Strike a pose, have fun, and leave with a forever memory that will remind you of this unforgettable event!</p>
-      <p>1 photostrip 25,- kr</p>
-      <p>2 photostrip 40,- kr</p>
-      <p>Big photo 15,- kr</p>
-    </article>
-  )}
+<div id="AerialPerformance-info" class="info-box hide">
+  <article>
+    <h3>AERIAL PERFORMANCE</h3>
+    <p>The Aerial Performance corner at the festival features mesmerizing shows showcasing talented artists performing breathtaking aerial silks, trapeze, and hoop acts. With multiple performances throughout the day, attendees are captivated by the grace and skill of the performers. Interactive workshops allow festival-goers to try basic aerial skills under professional guidance. The vibrant atmosphere, complete with live music and dazzling lights, creates an unforgettable experience!</p>
+  </article>
 </div>
 
 <style>
-  .info-box {
-    position: absolute;
-    top: 10%;  
-    left: 10%; 
-    width: 80%; 
-    background-color: #383838;
-    padding: 20px;
-    border: 1px solid #91ff36;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 2000; 
-    display: none; 
-    transition: opacity 0.3s ease-in-out;
-  }
+.info-box {
+  position: absolute;
+  top: 40%;  
+  left: 40%; 
+  width: 25%; 
+  background-color: #383838;
+  padding: 40px;
+  border: 2px solid #91ff36;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 2000; 
+  display: none; 
+  transition: opacity 0.3s ease-in-out;
+  color: #91ff36;
+}
 
-  .info-box.show {
-    display: block;
-    opacity: 1;
-  }
+.info-box.show {
+  display: block;
+  opacity: 1;
+}
 
-  .info-box.hide {
-    display: none;
-    opacity: 0;
-  }
+.info-box.hide {
+  display: none;
+  opacity: 0;
+}
 
-  .info-box p {
-    font-size: 18px;
-  }
+.info-box p {
+  font-size: 18px;
+}
 
-  .info-box h3 {
-    font-size: 30px;
-  }
+.info-box h3 {
+  font-size: 30px;
+}
 </style>

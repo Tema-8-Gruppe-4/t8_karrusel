@@ -6,6 +6,8 @@ import Search from "../components/Search.astro";
 import Footer from "../layout/Footer.astro";
 import Button from "../components/Button.astro";
 import FaqBoks from "../components/FaqBoks.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
+import GlowButton from "../components/GlowButton.astro";
 ---
 
 
@@ -20,6 +22,9 @@ import FaqBoks from "../components/FaqBoks.astro";
       <p>Come join us for a ride on Refshaleøen!</p>
       <div class="countdown-timer">
         <p>345 days : 10 hours : 37 minutes left</p>
+      </div>
+      <div class="buttong-container">
+        <GlowButton buttontext="BUY TICKETS!" />
       </div>
     </div>
   </div>
@@ -84,8 +89,8 @@ import FaqBoks from "../components/FaqBoks.astro";
   </section>
 
   <!-- FAQ Section -->
-<FaqBoks/>
-
+  <FaqBoks/>
+  <ScrollToTop/>
   <Footer />
 </MainLayout>
 

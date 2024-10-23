@@ -1,7 +1,7 @@
 ---
 const {artist} = Astro.props;
 ---
-<!--Katinka Artister til artistlisten -->
+<!--Katinka Artister til artistlisten/listview -->
 
 <li id="artist_list">
     <a href={`/artists/${artist.slug}`}>
@@ -44,5 +44,8 @@ a:hover img {
     margin-left: 0rem;
     
     }
+    a:hover img { 
+    display: none;
+}
 }
 </style>

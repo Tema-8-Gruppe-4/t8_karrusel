@@ -1,9 +1,51 @@
 ---
 const {artist} = Astro.props;
 ---
+<!--Katinka Artister til artistlisten/listview -->
 
-<li>
-    <a href={`/artists/${artist.id}`}>
+<li id="artist_list">
+    <a href={`/artists/${artist.slug}`}>
     <h3>{artist.name}</h3>
+    <img src="../imgs/img2.webp" />
     </a>
 </li>
+
+<style>
+li {
+    margin-bottom: 2rem;
+    margin-left: 8rem;
+    list-style: none;
+    }
+h3 {
+    color: white;
+    font-size: 32px;
+    text-decoration: none;
+    font-display: capitalize;
+    }
+    a {
+        text-decoration: none;
+    }
+
+    /**hover image */
+     a img { 
+    display: none; /* Billedet er skjult som standard */
+    position: relative; /* Bruges til at placere billedet i forhold til linket */
+    top: 0; /* Justér billedets top-position, så det passer med teksten */
+    left: 15%; /* Placerer billedet til højre for teksten */
+    margin-left: 10px; /* Tilføjer lidt afstand mellem tekst og billede */
+}
+a:hover img { 
+    display: block; /* Vis billedet ved hover */
+}
+
+@media (max-width: 800px) {
+#artist_list {
+    text-align: center;
+    margin-left: 0rem;
+    
+    }
+    a:hover img { 
+    display: none;
+}
+}
+</style>

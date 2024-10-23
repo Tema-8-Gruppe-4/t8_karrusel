@@ -1,7 +1,12 @@
 ---
+//Singleview
+//@ts-nocheck (Besked fra Dannie: Ville fjerne fejlmelding længere ned i koderne...)
+
 import MainLayout from '../../layout/MainLayout.astro';
 import Header from '../../layout/Header.astro';
+import GoBackArrow from '../../components/GoBackArrow.astro';
 import Footer from '../../layout/Footer.astro';
+import ScrollToTop from '../../components/ScrollToTop.astro';
 
 export async function getStaticPaths() {
     const url = "https://xnuptxxrxfdladlzrict.supabase.co/rest/v1/Kunstnere";
@@ -14,7 +19,7 @@ export async function getStaticPaths() {
     const artists = await fetch(url, options).then(res=>res.json())
     
     return artists.map(artist => ({
-        params: { navn: artist.id }, // [artist]=artist.slug
+        params: { navn: artist.slug }, // [artist]=artist.slug
         props: { artist } // send al data med som props
       }))
   }
@@ -22,13 +27,17 @@ export async function getStaticPaths() {
   const { artist } = Astro.props;
   console.log(artist) // artist.name, artist.image osv.
 ---
+
 <MainLayout>
 <Header/>
-
-  <h1>{artist.name}</h1>
-  <h3>{artist.location}, {artist.date}, {artist.time}</h3>
+<GoBackArrow/>
+<img src={artist.image} alt={artist.name}/>
+<h1>{artist.name}</h1>
+<h3>{artist.date} {artist.time}</h3>
+  <h3>AT: {artist.location}</h3>
   <p>{artist.description}</p>
   <img src={artist.image} alt={artist.name}/>
+  <ScrollToTop/>
 <Footer/>
 </Mainlayout>
 
@@ -51,5 +60,15 @@ export async function getStaticPaths() {
   font-style: normal;
   font-display: swap;
 }
-
+h1, h3, p{
+  padding: 1rem;
+  margin: 1.5rem;
+}
+h3, p {
+  color: var(--quaternary);
+  max-width: 65ch;
+}
+h1, h3 {
+  font-display: capitalize;
+}
 </style>

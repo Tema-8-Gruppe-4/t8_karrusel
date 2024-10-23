@@ -1,12 +1,20 @@
+<!-- OBS får ikke til at lave dynamisk
+ ---
+import ProgramCard from "./ProgramCard.astro";
+
+const url = "https://xnuptxxrxfdladlzrict.supabase.co/rest/v1/Kunstnere";
+const options = {
+        headers: {
+            apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhudXB0eHhyeGZkbGFkbHpyaWN0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzQ1NjAsImV4cCI6MjA0NDIxMDU2MH0.RGy9b8YR0QZ5kbRBGPOLnBDCk0uhTzlYqKZgTkuw6HQ",
+        },
+    }
+
+const artists = await fetch(url, options).then(res=>res.json());
+console.log(artists);
 ---
-import ProgramCard from "../components/ProgramCard.astro";
----
-<!--Katinka -->
+Katinka
 
 <section class="program_section">
-<ProgramCard/>
-<ProgramCard/>
-<ProgramCard/>
 <ProgramCard/>
 </section>
 
@@ -14,6 +22,7 @@ import ProgramCard from "../components/ProgramCard.astro";
     .program_section {
         text-align: center;
         margin: 2rem;
+        display: flex;
     }
     
     /**Desktop styling */
@@ -23,4 +32,4 @@ import ProgramCard from "../components/ProgramCard.astro";
     justify-content: space-evenly;
     }      
     }
-    </style>
+    </style> -->

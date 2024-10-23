@@ -1,14 +1,15 @@
 ---
-//Lineup/Listview Katinka med statisk program
+//Lineup/Listview Katinka Dynamisk Program (index). Får ikke til at virke, derfor lægger jeg kode ind her til hvis vi får tid til at lege videre med det
 import MainLayout from "../../layout/MainLayout.astro";
 import Header from "../../layout/Header.astro";
-import GoBackArrow from "../../components/GoBackArrow.astro";
 import Search from "../../components/Search.astro";
 import Button from "../../components/Button.astro";
+import ProgramSection from "../../components/ProgramSection.astro";
 import StaticProgram from "../../components/StaticProgram.astro";
-import ArtistInfo from "../../components/ArtistInfo.astro";
 import Footer from "../../layout/Footer.astro";
 import ScrollToTop from "../../components/ScrollToTop.astro";
+import GoBackArrow from "../../components/GoBackArrow.astro";
+import ArtistInfo from "../../components/ArtistInfo.astro";
 
 const url = "https://xnuptxxrxfdladlzrict.supabase.co/rest/v1/Kunstnere";
 const options = {
@@ -19,26 +20,37 @@ const options = {
 
 const artists = await fetch(url, options).then(res=>res.json());
 console.log(artists);
+
+// const {location} = Astro.props;
+const thursdayKunstnere = artists.filter((a) => a.date === "Thursday");
+const fridayKunstnere = artists.filter((a) => a.date === "Friday");
+const saturdayKunstnere = artists.filter((a) => a.date === "Saturday");
+//const manegen = artists.filter((a) => a.location === "Manegen");
 ---
 
 <MainLayout>
     <Header/>
-    <h1 class="lineup">LINEUP 2025</h1>
+    <h1>LINEUP 2025</h1>
     <GoBackArrow/>
-    <div id="search">
     <Search/>
-    </div>
     <a class= "button" href="#artist_list"><Button buttontext="Check out this year’s artists"/></a>
-     <h1 class="program">PROGRAM</h1>
+     <h1>PROGRAM</h1>
      <nav>
        <a href="#thursday">- THURSDAY</a>
        <a href="#friday">- FRIDAY</a>
        <a href="#saturday">- SATURDAY</a>
      </nav>
-
+     <h3 id="thursday">- THURSDAY</h3>
      <StaticProgram/>
-
-   <h1 class="thisyears">THIS YEAR'S ARTISTS</h1>
+   <!-- <ProgramSection/> -->
+   {thursdayKunstnere.map((artist) => <li>{artist.name}<br>{artist.time}</li>)}
+   <h3 id="friday">- FRIDAY</h3>
+   <!-- <ProgramSection/> -->
+   {fridayKunstnere.map((artist) => <li>{artist.name}<br>{artist.time}</li>)}
+   <h3 id="saturday">- SATURDAY</h3>
+   <!-- <ProgramSection/> -->
+   {saturdayKunstnere.map((artist) => <li>{artist.name}<br>{artist.time}</li>)}
+   <h1>THIS YEAR'S ARTISTS</h1>
     <ul>
         {
             artists.map((artist) => (
@@ -70,33 +82,14 @@ console.log(artists);
   font-style: normal;
   font-display: swap;
 }
-#search {
-    display: flex;
-    justify-content: center;
-}
-    .lineup {
-    text-align: center;
-
-    }
-    .program {
-        margin-left: 5rem;
-        padding-top: 3rem;
-        padding-bottom: 2rem;
-    }
-    .thisyears{
-        margin-left: 5rem;
-        padding-top: 5rem;
-        padding-bottom: 4rem;
+    h1 {
+    margin: 5rem;
     }
     a {
     margin-left: 1rem;
     }
     .button {
         text-decoration: none;
-        display: flex;
-        justify-content: center;
-        padding-top: 3rem;
-        padding-bottom: 3rem;
     }
     h3 {
     margin-top: 3rem;
@@ -106,15 +99,13 @@ console.log(artists);
     nav {
         display: flex;
         margin-left: 1.5rem;
-        padding-bottom: 3rem;
     }
     ul {
         margin-bottom: 7rem;
     }
     @media (max-width: 800px){
-    .lineup, .program, .thisyears {
-        text-align: center;
-        margin: 1rem;
+        h1 {
+            text-align: center;
     }
 } 
 </style>

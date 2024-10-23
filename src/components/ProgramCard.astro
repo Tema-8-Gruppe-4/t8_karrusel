@@ -1,4 +1,56 @@
+<!-- Andre udkast til dynamisk løsning. virker ikke optimalt---
+//import Program from "./Program.astro";
+
+const url = "https://xnuptxxrxfdladlzrict.supabase.co/rest/v1/Kunstnere";
+const options = {
+        headers: {
+            apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhudXB0eHhyeGZkbGFkbHpyaWN0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzQ1NjAsImV4cCI6MjA0NDIxMDU2MH0.RGy9b8YR0QZ5kbRBGPOLnBDCk0uhTzlYqKZgTkuw6HQ",
+        },
+    }
+const {artist, location, slug} = Astro.props;
+
+const artists = await fetch(url, options).then(res=>res.json());
+console.log(artists);
 ---
+{artists.map((artist)=>
+<a href={`Kunstnere/${artist.slug}`}>
+<article class="card">
+<h3>{artist.location}</h3>
+<div>
+<h4>{artist.name}</h4>
+<p>{artist.time}</p>
+</div>
+</article>
+</a>
+)} -->
+
+<!-- {
+artists.map((artist) => <Program scene={artist.location} artist={artist.name} time={artist.time}/>)
+} -->
+
+
+<!-- Første udkast---
+import Program from "./Program.astro";
+
+const url = "https://xnuptxxrxfdladlzrict.supabase.co/rest/v1/Kunstnere";
+const options = {
+        headers: {
+            apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhudXB0eHhyeGZkbGFkbHpyaWN0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzQ1NjAsImV4cCI6MjA0NDIxMDU2MH0.RGy9b8YR0QZ5kbRBGPOLnBDCk0uhTzlYqKZgTkuw6HQ",
+        },
+    }
+
+const artists = await fetch(url, options).then(res=>res.json());
+console.log(artists);
+---
+<ul>
+    {
+        artists.map((artist) => (
+            <Program artist={artist}/>
+        ))
+    }
+    </ul> -->
+
+<!-- ---
 import Program from "../components/Program.astro";
 ---
 
@@ -9,9 +61,9 @@ import Program from "../components/Program.astro";
     <Program/>
     <Program/>
     <Program/>
-</article>
+</article>-->
 
-<style>
+<!-- <style>
 article {
     background-color: var(--quinary);
     display: flex;
@@ -24,4 +76,7 @@ h4 {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
-</style>
+a {
+    text-decoration: none;
+}
+</style>  -->

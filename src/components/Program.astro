@@ -1,8 +1,29 @@
+<!-- ---
+const url = "https://xnuptxxrxfdladlzrict.supabase.co/rest/v1/Kunstnere";
+const options = {
+        headers: {
+            apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhudXB0eHhyeGZkbGFkbHpyaWN0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzQ1NjAsImV4cCI6MjA0NDIxMDU2MH0.RGy9b8YR0QZ5kbRBGPOLnBDCk0uhTzlYqKZgTkuw6HQ",
+        },
+    }
+
+const {artist, name, time, slug} = Astro.props;
+
+const artists = await fetch(url, options).then(res=>res.json());
+console.log(artists);
 ---
 
----
+<li id="program_list">
+    <a href={`/artists/${artist.slug}`}>
+    <h3>{artist.name}</h3>
+    </a>
+    <p>{artist.time}</p>
+</li> -->
+
+
+
+
 <!--Katinka -->
-<article>
+<!-- <article>
 <p class="artist">Artist</p>
 <p class="time">Kl. 18.00</p>
 </article>
@@ -19,4 +40,4 @@
         margin-top: .5rem;
         margin-bottom: 2rem;
     }
-</style>
+</style> -->

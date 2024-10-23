@@ -4,178 +4,171 @@
 
 <!--Katinka -->
 <header>
-    <div class="logo">
-      <a href="/">
-        <img src="../svg/groenlogo.svg" alt="Logo" />
-      </a>
+  <div class="logo">
+    <a href="/">
+      <img src="../svg/groenlogo.svg" alt="Logo" />
+    </a>
+  </div>
+  <nav>
+    <ul class="menu">
+      <li><a href="/">HOME</a></li>
+      <li><a href="/artists/">LINEUP 2025</a></li>
+      <li><a href="/map">MAP</a></li>
+    </ul>
+    <div class="burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
     </div>
-    <nav>
-      <ul class="menu">
-        <li><a href="/">HOME</a></li>
-        <li><a href="/artists/">LINEUP 2025</a></li>
-        <li><a href="/map">MAP</a></li>
-      </ul>
-      <div class="burger">
-    
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+  </nav>
+</header>
 
-      </div>
-    </nav>
-  </header>
-
-  <style>
-    /**HEADER & BURGER Menu**/
-header {
-  position: static;
-  top: 0;
-  z-index: 1000;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  background-color: var(--primary);
-}
-.logo img {
-  width: 50px;
-  height: 50px;
-  padding: 0; /**Gør at der ikke kommer padding på som gør logo mindre**/
-}
-
-header nav ul {
-  /* display: flex; */
-  justify-content: space-between;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  padding-bottom: 0.4rem;
-  gap: 30px;
-  overflow-x: auto;
-}
-
-.menu a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  transition: color 0.3s;
-  margin: 30px;
-}
-.menu a:hover {
-  color: var(--quaternary); /**ændre?**/
-}
-
-.burger {
-  width: 30px;
-  height: 20px;
-  cursor: pointer;
-  margin-bottom: 15px;
-}
-
-.burger .line {
-  width: 100%;
-  height: 2px;
-  margin-bottom: 5px;
-  transition: 0.2s linear;
-  background-color: var(--secondary);
-}
-.menu {
-  display: none;
-}
-.burger {
-  display: block;
-}
-.burger.active .line:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-  transition: 0.2s linear;
-}
-.burger.active .line:nth-child(2) {
-  opacity: 0;
-  transition: 0.15s linear;
-}
-.burger.active .line:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-  transition: 0.2s linear;
-}
-
-nav.active .menu {
-  display: block;
-  background-color: var(--primary);
-  position: absolute;
-  top: 80px;
-  left: 0;
-  width: 100%;
-  height: 310px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-  z-index: 1;
-}
-
-nav.active .menu li {
-  margin: 10px 20px;
-}
-
-/**Burger menu desktop OBS gør det større!**/
-@media screen and (min-width: 800px) {
- 
-  .burger {
-    margin-bottom: 50px;
-    margin-right: 20px;
-  }
-  nav.active .menu {
-    top: 110px;
-    height: 550px;
+<style>
+  /**HEADER & BURGER Menu**/
+  header {
+    position: static;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    background-color: var(--primary);
   }
   .logo img {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     padding: 0; /**Gør at der ikke kommer padding på som gør logo mindre**/
   }
-  .menu a {
-    margin: 80px;
-    color: var(--secondary);
+
+  header nav ul {
+    /* display: flex; */
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 0.4rem;
+    gap: 30px;
+    overflow-x: auto;
   }
+
+  .menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+    margin: 30px;
+  }
+  .menu a:hover {
+    color: var(--quaternary); /**ændre?**/
+  }
+
+  .burger {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+
   .burger .line {
-    margin-bottom: 10px;
-    height: 3px;
-    width: 150%;
-    
+    width: 100%;
+    height: 2px;
+    margin-bottom: 5px;
+    transition: 0.2s linear;
+    background-color: var(--secondary);
+  }
+  .menu {
+    display: none;
+  }
+  .burger {
+    display: block;
   }
   .burger.active .line:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
     transition: 0.2s linear;
   }
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+    transition: 0.15s linear;
+  }
   .burger.active .line:nth-child(3) {
-    transform: rotate(-45deg) translate(14px, -14px);
+    transform: rotate(-45deg) translate(5px, -5px);
     transition: 0.2s linear;
   }
-}
-  </style>
+
+  nav.active .menu {
+    display: block;
+    background-color: var(--primary);
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 310px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    z-index: 1;
+  }
+
+  nav.active .menu li {
+    margin: 10px 20px;
+  }
+
+  /**Burger menu desktop OBS gør det større!**/
+  @media screen and (min-width: 800px) {
+    .burger {
+      margin-bottom: 50px;
+      margin-right: 20px;
+    }
+    nav.active .menu {
+      top: 110px;
+      height: 550px;
+    }
+    .logo img {
+      width: 100px;
+      height: 100px;
+      padding: 0; /**Gør at der ikke kommer padding på som gør logo mindre**/
+    }
+    .menu a {
+      margin: 80px;
+      color: var(--secondary);
+    }
+    .burger .line {
+      margin-bottom: 10px;
+      height: 3px;
+      width: 150%;
+    }
+    .burger.active .line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+      transition: 0.2s linear;
+    }
+    .burger.active .line:nth-child(3) {
+      transform: rotate(-45deg) translate(14px, -14px);
+      transition: 0.2s linear;
+    }
+  }
+</style>
 
 <script>
-const burger = document.querySelector(".burger");
-const nav = document.querySelector("nav");
-const menu = document.querySelector(".menu");
-const links = document.querySelectorAll(".menu li a");
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector("nav");
+  const menu = document.querySelector(".menu");
+  const links = document.querySelectorAll(".menu li a");
 
-//Burger menu
-burger.addEventListener("click", () => {
-  burger.classList.toggle("active");
-  nav.classList.toggle("active");
-});
-
-links.forEach((link) => {
-  link.addEventListener("click", () => {
-    burger.classList.remove("active");
-    nav.classList.remove("active");
+  //Burger menu
+  nav.addEventListener("click", () => {
+    burger.classList.toggle("active");
+    nav.classList.toggle("active");
   });
-});
+
+  //Burger menu
+  // burger.addEventListener("click", () => {
+  //   burger.classList.toggle("active");
+  //   nav.classList.toggle("active");
+  // });
+
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      burger.classList.remove("active");
+      nav.classList.remove("active");
+    });
+  });
 </script>
-
-
-
-
-
-
-
-
-

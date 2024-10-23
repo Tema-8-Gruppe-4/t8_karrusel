@@ -2,73 +2,103 @@
 //Singleview
 //@ts-nocheck (Besked fra Dannie: Ville fjerne fejlmelding længere ned i koderne...)
 
-import MainLayout from '../../layout/MainLayout.astro';
-import Header from '../../layout/Header.astro';
-import GoBackArrow from '../../components/GoBackArrow.astro';
-import Footer from '../../layout/Footer.astro';
-import ScrollToTop from '../../components/ScrollToTop.astro';
+import MainLayout from "../../layout/MainLayout.astro";
+import Header from "../../layout/Header.astro";
+import GoBackArrow from "../../components/GoBackArrow.astro";
+import Footer from "../../layout/Footer.astro";
+import ScrollToTop from "../../components/ScrollToTop.astro";
 
 export async function getStaticPaths() {
-    const url = "https://xnuptxxrxfdladlzrict.supabase.co/rest/v1/Kunstnere";
-    const options = {
-      headers: {
-        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhudXB0eHhyeGZkbGFkbHpyaWN0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzQ1NjAsImV4cCI6MjA0NDIxMDU2MH0.RGy9b8YR0QZ5kbRBGPOLnBDCk0uhTzlYqKZgTkuw6HQ",
-          }
-    }
-    
-    const artists = await fetch(url, options).then(res=>res.json())
-    
-    return artists.map(artist => ({
-        params: { navn: artist.slug }, // [artist]=artist.slug
-        props: { artist } // send al data med som props
-      }))
-  }
-  
-  const { artist } = Astro.props;
-  console.log(artist) // artist.name, artist.image osv.
+  const url = "https://xnuptxxrxfdladlzrict.supabase.co/rest/v1/Kunstnere";
+  const options = {
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhudXB0eHhyeGZkbGFkbHpyaWN0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzQ1NjAsImV4cCI6MjA0NDIxMDU2MH0.RGy9b8YR0QZ5kbRBGPOLnBDCk0uhTzlYqKZgTkuw6HQ",
+    },
+  };
+
+  const artists = await fetch(url, options).then((res) => res.json());
+
+  return artists.map((artist) => ({
+    params: { navn: artist.slug }, // [artist]=artist.slug
+    props: { artist }, // send al data med som props
+  }));
+}
+
+const { artist } = Astro.props;
+console.log(artist); // artist.name, artist.image osv.
 ---
 
 <MainLayout>
-<Header/>
-<GoBackArrow/>
-<img src={artist.image} alt={artist.name}/>
-<h1>{artist.name}</h1>
-<h3>{artist.date} {artist.time}</h3>
+  <Header />
+  <GoBackArrow />
+  <img src={artist.image} alt={artist.name} />
+  <h1>{artist.name}</h1>
+  <h3>{artist.date} {artist.time}</h3>
   <h3>AT: {artist.location}</h3>
   <p>{artist.description}</p>
-  <img src={artist.image} alt={artist.name}/>
-  <ScrollToTop/>
-<Footer/>
-</Mainlayout>
-
+  <img src={artist.image} alt={artist.name} />
+  <div class="dummy-container">
+    <img src="../svg/spotifydummy.svg" class="dummy" alt="spotify songs" />
+  </div>
+  <ScrollToTop />
+  <Footer />
+</MainLayout>
 
 <style>
-@font-face {
-  font-family: "jhc_audemarsmedium";
-  src: url("/public/fonts/audemars/jhcaudemars-medium-webfont.woff2") format("woff2"),
-    url("/public/fonts/audemars/jhcaudemars-medium-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "bacilus_grotesqueregular";
-  src: url("/public/fonts/bacilus/bacilusgrotesque-regular-webfont.woff2")
-      format("woff2"),
-    url("/public/fonts/bacilus/bacilusgrotesque-regular-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-h1, h3, p{
-  padding: 1rem;
-  margin: 1.5rem;
-}
-h3, p {
-  color: var(--quaternary);
-  max-width: 65ch;
-}
-h1, h3 {
-  font-display: capitalize;
-}
+  @font-face {
+    font-family: "jhc_audemarsmedium";
+    src:
+      url("/public/fonts/audemars/jhcaudemars-medium-webfont.woff2")
+        format("woff2"),
+      url("/public/fonts/audemars/jhcaudemars-medium-webfont.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "bacilus_grotesqueregular";
+    src:
+      url("/public/fonts/bacilus/bacilusgrotesque-regular-webfont.woff2")
+        format("woff2"),
+      url("/public/fonts/bacilus/bacilusgrotesque-regular-webfont.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  h1,
+  h3,
+  p {
+    padding: 1rem;
+    margin: 1.5rem;
+  }
+  h3,
+  p {
+    color: var(--quaternary);
+    max-width: 65ch;
+  }
+  h1,
+  h3 {
+    font-display: capitalize;
+  }
+  .dummy-container {
+    display: flex;
+    justify-content: center;
+  }
+  .dummy {
+    max-width: 100vw;
+    padding: 40px;
+  }
+  @media (min-width: 800px) {
+    .dummy-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .dummy {
+      max-width: 50vw;
+      padding-right: 30px;
+    }
+  }
 </style>

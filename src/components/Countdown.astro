@@ -1,0 +1,49 @@
+---
+// Countdown.astro
+---
+
+<div id="countdown"></div>
+
+<style>
+  #countdown {
+    font-family: var(--font2);
+    font-size: 16px;
+    color: var(--quaternary);
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: 800px) {
+    #countdown {
+      font-size: 24px;
+    }
+  }
+</style>
+
+<script>
+  // Sæt mål-datoen (skift til din ønskede dato og tid)
+  const targetDate = new Date("August 25, 2025 10:00:00").getTime();
+
+  const interval = setInterval(function () {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Vis resultatet i elementet med id="countdown"
+    document.getElementById("countdown").innerHTML =
+      days + "d " + hours + "t " + minutes + "m " + seconds + "s ";
+
+    // Hvis nedtællingen er færdig, stop intervallet og vis en besked
+    if (distance < 0) {
+      clearInterval(interval);
+      document.getElementById("countdown").innerHTML = "EXPIRED";
+    }
+  }, 1000); // Opdater hvert sekund for at inkludere sekunder
+</script>

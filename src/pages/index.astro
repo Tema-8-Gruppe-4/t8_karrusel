@@ -8,6 +8,7 @@ import Button from "../components/Button.astro";
 import FaqBoks from "../components/FaqBoks.astro";
 import ScrollToTop from "../components/ScrollToTop.astro";
 import GlowButton from "../components/GlowButton.astro";
+import Countdown from "../components/Countdown.astro";
 ---
 
 
@@ -20,9 +21,10 @@ import GlowButton from "../components/GlowButton.astro";
     <div class="hero-content">
       <h1>KARRUSEL FESTIVAL<br />28. - 30. AUGUST 2025</h1>
       <p>Come join us for a ride on Refshaleøen!</p>
-      <div class="countdown-timer">
-        <p>345 days : 10 hours : 37 minutes left</p>
-      </div>
+     
+        <Countdown/>
+
+    
       <div class="buttong-container">
         <GlowButton buttontext="BUY TICKETS!" />
       </div>
@@ -138,6 +140,13 @@ import GlowButton from "../components/GlowButton.astro";
   .hero-content p {
     margin: 10px 0; 
   }
+
+  #countdown {
+  font-family: var(--font2);
+  font-size: 16px;
+  color: var( --quaternary);
+}
+
   /*search*/
   .search-section {
   display: flex;
@@ -259,20 +268,14 @@ import GlowButton from "../components/GlowButton.astro";
 }
 
 @media (min-width: 800px){
-/* 
-.hero-section h1{
-  margin: 20px;
-} */
+
   .wm {
   display: grid;
   grid-template-columns: 1fr 2fr;
 
   }
 /* welcome section */
-/* .welcome {
-  text-align: center; 
-  margin-bottom: 20px; 
-} */
+
 .welcome h2 {
   position: absolute; 
   transform: translate(-1%, 400%) rotate(-10deg); 
@@ -317,4 +320,7 @@ font-size: 24px;
 }
 
 }
+
 </style>
+
+

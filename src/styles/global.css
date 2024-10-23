@@ -81,6 +81,7 @@ p {
   font-family: var(--font2);
   font-size: 16px;
   line-height: 25px;
+  color: var(--quaternary);
 }
 li {
   font-family: var(--font2);

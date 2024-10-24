@@ -43,6 +43,7 @@ import Countdown from "../components/Countdown.astro";
   <img src="../imgs/img2.webp" alt="karruselpladsen"/>
 </section>
   <section class="map-section">
+    <h2>Chek out our map</h2>
     <a href="/map">
       <img src="../imgs/map.webp" alt="Festival Map" class="map-image" />
     </a>
@@ -182,12 +183,22 @@ import Countdown from "../components/Countdown.astro";
 }
 
 /* map section */
-.map-section {
+/* .map-section {
   width: 100%; 
   display: flex; 
   justify-content: center; 
+} */
+.map-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Stack h2 and the image vertically */
+  align-items: center; /* Horizontally center both elements */
+  justify-content: center; /* Vertically center both elements */
 }
-
+.map-section h2{
+  padding-bottom: 20px;
+  font-size: 4vw;
+}
 .map-image {
   max-width: 100%; 
   height: auto; 

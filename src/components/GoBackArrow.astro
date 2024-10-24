@@ -7,6 +7,7 @@
 </button>
 
 <style>
+
 .back-button {
     position: fixed; 
     transform: rotate(270deg); 
@@ -27,6 +28,13 @@
     left: 15px;
     transition: ease-in-out 0.3s;
 }
+
+@media (max-width: 800px){
+        .back-button img {
+            width: 40px;
+            height: auto;
+        }
+    }
 </style>
 
 <script>

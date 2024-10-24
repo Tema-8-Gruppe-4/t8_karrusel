@@ -33,30 +33,41 @@ console.log(artist); // artist.name, artist.image osv.
   <Header />
   <GoBackArrow />
   <div class="full-page-image">
-    <img src={`/imgs/kunstner-img/${artist.image}`}
-  alt={artist.name} class="background-image"/>
-  <h1 class="hero_title">{artist.name}</h1>
+    <img
+      src={`/imgs/kunstner-img/${artist.image}`}
+      alt={artist.name}
+      class="background-image"
+    />
+    <h1 class="hero_title">{artist.name}</h1>
   </div>
-  
+
   <h3>{artist.date} {artist.time}</h3>
   <h3>AT: {artist.location}</h3>
   <p>{artist.description}</p>
   <section class="artist-bottom">
-  <div class="artist-spotify">
-    <div><img src={`/imgs/kunstner-img/${artist.image}`}
-  alt={artist.name} class="artist-album"/></div>
+    <div class="artist-spotify">
+      <div>
+        <img
+          src={`/imgs/kunstner-img/${artist.image}`}
+          alt={artist.name}
+          class="artist-album"
+        />
+      </div>
 
-  <div>
-    <a href={artist.spotifylink} target="_blank" rel="noopener noreferrer">
-      <img src="../svg/spotifyBTN.png" alt="spotify button" class="spotifyBTN"/>
-    </a>
-  </div>
-
-</div>
-  <div class="dummy-container">
-    <img src="../svg/spotifydummy.svg" class="dummy" alt="spotify songs" />
-  </div>
-</section>
+      <div>
+        <a href={artist.spotifylink} target="_blank" rel="noopener noreferrer">
+          <img
+            src="../svg/spotifyBTN.png"
+            alt="spotify button"
+            class="spotifyBTN"
+          />
+        </a>
+      </div>
+    </div>
+    <div class="dummy-container">
+      <img src="../svg/spotifydummy.svg" class="dummy" alt="spotify songs" />
+    </div>
+  </section>
   <ScrollToTop />
   <Footer />
 </MainLayout>
@@ -104,40 +115,40 @@ console.log(artist); // artist.name, artist.image osv.
     justify-content: center;
   }
   .dummy {
-    max-width: 100vw;
+    max-width: 65vw;
     padding: 40px;
   }
-.hero_title {
-  position: relative;
-  top: 500px;
-  left:40px;
-}
+  .hero_title {
+    position: relative;
+    top: 500px;
+    left: 40px;
+  }
   .full-page-image {
     position: relative;
-    height: 800px; 
-    overflow: hidden; 
+    height: 800px;
+    overflow: hidden;
   }
 
   .background-image {
-    position: absolute; 
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
     object-position: center; /* You can adjust this to crop the image differently, e.g., 'top' or 'bottom' */
     z-index: -1; /* Keeps it behind the header, logo, and burger menu */
   }
 
   .artist-album {
     width: 300px;
-  height: 300px;
-  margin: 3em;
-  margin-bottom: 0;
+    height: 300px;
+    margin: 3em;
+    margin-bottom: 0;
   }
 
   .artist-bottom {
-    display:flex;
+    display: flex;
     flex-direction: row;
   }
 
@@ -145,12 +156,12 @@ console.log(artist); // artist.name, artist.image osv.
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 
-    .spotifyBTN{
-      width:200px
+    .spotifyBTN {
+      width: 200px;
     }
-.dummy-container {
+    .dummy-container {
       display: flex;
       justify-content: flex-end;
     }
@@ -158,14 +169,11 @@ console.log(artist); // artist.name, artist.image osv.
       max-width: 50vw;
       padding-right: 30px;
     }
-
   }
   @media (max-width: 850px) {
     .artist-bottom {
       display: flex;
       flex-direction: column;
     }
-
-    
   }
 </style>

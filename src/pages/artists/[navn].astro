@@ -35,9 +35,9 @@ console.log(artist); // artist.name, artist.image osv.
   <div class="full-page-image">
     <img src={`/imgs/kunstner-img/${artist.image}`}
   alt={artist.name} class="background-image"/>
+  <h1 class="hero_title">{artist.name}</h1>
   </div>
   
-  <h1>{artist.name}</h1>
   <h3>{artist.date} {artist.time}</h3>
   <h3>AT: {artist.location}</h3>
   <p>{artist.description}</p>
@@ -107,7 +107,11 @@ console.log(artist); // artist.name, artist.image osv.
     max-width: 100vw;
     padding: 40px;
   }
-
+.hero_title {
+  position: relative;
+  top: 500px;
+  left:40px;
+}
   .full-page-image {
     position: relative;
     height: 1000px; 

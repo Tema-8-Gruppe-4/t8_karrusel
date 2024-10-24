@@ -19,7 +19,10 @@ import Countdown from "../components/Countdown.astro";
   <div class="hero-section">
     <img class="hero-image" src="../imgs/hero.webp" alt="Hero karrusel" />
     <div class="hero-content">
-      <h1>KARRUSEL FESTIVAL<br />28. - 30. AUGUST 2025</h1>
+      <div class="index_header">
+      <h1>KARRUSEL FESTIVAL</h1>
+        <h1>28. - 30. AUGUST 2025</h1>
+      </div>
       <p>Come join us for a ride on Refshaleøen!</p>
      
         <Countdown/>
@@ -43,6 +46,7 @@ import Countdown from "../components/Countdown.astro";
   <img src="../imgs/img2.webp" alt="karruselpladsen"/>
 </section>
   <section class="map-section">
+    <h2>Chek out our map</h2>
     <a href="/map">
       <img src="../imgs/map.webp" alt="Festival Map" class="map-image" />
     </a>
@@ -97,6 +101,17 @@ import Countdown from "../components/Countdown.astro";
 </MainLayout>
 
 <style>
+  .index_header{
+    padding-top: 1em;
+        padding-bottom: 40px;
+  }
+
+  @media (max-width:900px){
+    .index_header{
+      padding-top: 7em;
+    }
+  }
+
   h2,
   h3,
   p {
@@ -170,7 +185,7 @@ import Countdown from "../components/Countdown.astro";
   margin-bottom: 20px; 
 }
 .welcome h2 {
-  position: absolute; 
+  /* position: absolute;  */
   transform: translate(-1%, 400%) rotate(-10deg); 
   font-size: 5.5vw;
   white-space: nowrap; 
@@ -182,12 +197,22 @@ import Countdown from "../components/Countdown.astro";
 }
 
 /* map section */
-.map-section {
+/* .map-section {
   width: 100%; 
   display: flex; 
   justify-content: center; 
+} */
+.map-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Stack h2 and the image vertically */
+  align-items: center; /* Horizontally center both elements */
+  justify-content: center; /* Vertically center both elements */
 }
-
+.map-section h2{
+  padding-bottom: 20px;
+  font-size: 4vw;
+}
 .map-image {
   max-width: 100%; 
   height: auto; 
@@ -277,7 +302,7 @@ gap: 20px;
 /* welcome section */
 
 .welcome h2 {
-  position: absolute; 
+  /* position: absolute;  */
   transform: translate(-1%, 400%) rotate(-10deg); 
   font-size: 4vw;
   white-space: nowrap; 

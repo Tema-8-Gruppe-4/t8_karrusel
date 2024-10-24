@@ -13,7 +13,8 @@ import GoBackArrow from "../components/GoBackArrow.astro";
   <Header />
   <h1>MAP OF THE FESTIVAL AREA</h1>
   <GoBackArrow/>
-  <Button buttontext="Lineup 2025" />
+  <a href="../artists/" class="button"> <Button buttontext="Lineup 2025" /></a>
+ 
   <Interactivemap/>
 
  <ScrollToTop />
@@ -22,8 +23,17 @@ import GoBackArrow from "../components/GoBackArrow.astro";
 
 <style>
   h1 {
-    text-align: center;
-    font-size: 180px;
-  }
+    text-align: center; 
+        padding-top: 1em;
+        padding-bottom: 40px;
+      }
+
+  .button {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
 </style>
  

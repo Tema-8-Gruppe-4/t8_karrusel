@@ -19,7 +19,10 @@ import Countdown from "../components/Countdown.astro";
   <div class="hero-section">
     <img class="hero-image" src="../imgs/hero.webp" alt="Hero karrusel" />
     <div class="hero-content">
-      <h1>KARRUSEL FESTIVAL<br />28. - 30. AUGUST 2025</h1>
+      <div class="index_header">
+      <h1>KARRUSEL FESTIVAL</h1>
+        <h1>28. - 30. AUGUST 2025</h1>
+      </div>
       <p>Come join us for a ride on Refshaleøen!</p>
      
         <Countdown/>
@@ -97,6 +100,17 @@ import Countdown from "../components/Countdown.astro";
 </MainLayout>
 
 <style>
+  .index_header{
+    padding-top: 1em;
+        padding-bottom: 40px;
+  }
+
+  @media (max-width:900px){
+    .index_header{
+      padding-top: 7em;
+    }
+  }
+
   h2,
   h3,
   p {

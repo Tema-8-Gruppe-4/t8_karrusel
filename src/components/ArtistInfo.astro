@@ -6,7 +6,8 @@ const {artist} = Astro.props;
 <li id="artist_list">
     <a href={`/artists/${artist.slug}`}>
     <h3>{artist.name}</h3>
-    <img src="../imgs/img2.webp" />
+    <img src={`/imgs/kunstner-img/${artist.image}`}
+  alt={artist.name} />
     </a>
 </li>
 
@@ -22,21 +23,30 @@ h3 {
     text-decoration: none;
     font-display: capitalize;
     }
-    a {
-        text-decoration: none;
-    }
 
-    /**hover image */
-     a img { 
-    display: none; /* Billedet er skjult som standard */
-    position: relative; /* Bruges til at placere billedet i forhold til linket */
-    top: 0; /* Justér billedets top-position, så det passer med teksten */
-    left: 15%; /* Placerer billedet til højre for teksten */
-    margin-left: 10px; /* Tilføjer lidt afstand mellem tekst og billede */
+    a {
+  position: relative; 
+text-decoration: none;
+z-index: 100;
 }
+
+a img { 
+  display: block;
+  position: absolute; 
+  top: 0;
+  left: 100%; 
+  margin-left: 300px; /*juster ift hvor billede er*/
+  opacity: 0; 
+  transition: opacity 0.3s ease-in-out; 
+  z-index: -1; 
+  max-width: 800px;
+  height: auto;
+}
+
 a:hover img { 
-    display: block; /* Vis billedet ved hover */
+  opacity: 1; 
 }
+    
 
 @media (max-width: 800px) {
 #artist_list {

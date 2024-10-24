@@ -1,5 +1,4 @@
 ---
-
 import MainLayout from "../layout/MainLayout.astro";
 import Header from "../layout/Header.astro";
 import Search from "../components/Search.astro";
@@ -11,7 +10,6 @@ import GlowButton from "../components/GlowButton.astro";
 import Countdown from "../components/Countdown.astro";
 ---
 
-
 <MainLayout>
   <Header />
 
@@ -20,14 +18,11 @@ import Countdown from "../components/Countdown.astro";
     <img class="hero-image" src="../imgs/hero.webp" alt="Hero karrusel" />
     <div class="hero-content">
       <div class="index_header">
-      <h1>KARRUSEL FESTIVAL</h1>
+        <h1>KARRUSEL FESTIVAL</h1>
         <h1>28. - 30. AUGUST 2025</h1>
       </div>
       <p>Come join us for a ride on Refshaleøen!</p>
-     
-        <Countdown/>
-
-    
+      <Countdown />
       <div class="buttong-container">
         <GlowButton buttontext="BUY TICKETS!" />
       </div>
@@ -40,18 +35,18 @@ import Countdown from "../components/Countdown.astro";
   </div>
 
   <!-- Welcome and map Section  -->
-   <section class="wm">
-   <section class="welcome">
-  <h2>Welcome to Karrusel Festival!</h2>
-  <img src="../imgs/img2.webp" alt="karruselpladsen"/>
-</section>
-  <section class="map-section">
-    <h2>Chek out our map</h2>
-    <a href="/map">
-      <img src="../imgs/map.webp" alt="Festival Map" class="map-image" />
-    </a>
+  <section class="wm">
+    <section class="welcome">
+      <h2>Welcome to Karrusel Festival!</h2>
+      <img src="../imgs/img2.webp" alt="karruselpladsen" />
+    </section>
+    <section class="map-section">
+      <h2>Check out our map</h2>
+      <a href="/map">
+        <img src="../imgs/map.webp" alt="Festival Map" class="map-image" />
+      </a>
+    </section>
   </section>
-</section>
 
   <!-- Lineup Section with Animated App Buttons -->
   <section class="lineup-section">
@@ -61,56 +56,59 @@ import Countdown from "../components/Countdown.astro";
     <p>See this year's artists here</p>
   </section>
   <div class="app-slider">
-    <a href="https://apps.apple.com/dk/app/karrusel-festival/id6457261984?l=da" class="app" target="_blank">GET THE APP FOR IPHONE</a>
-    <a href="https://play.google.com/store/search?q=karrusel&c=apps" class="app-android" target="_blank">GET THE APP FOR ANDROID</a>
- 
-   </div>
-
+    <a
+      href="https://apps.apple.com/dk/app/karrusel-festival/id6457261984?l=da"
+      class="app"
+      target="_blank">GET THE APP FOR IPHONE</a
+    >
+    <a
+      href="https://play.google.com/store/search?q=karrusel&c=apps"
+      class="app-android"
+      target="_blank">GET THE APP FOR ANDROID</a
+    >
+  </div>
 
   <!-- General Information Section -->
   <section class="info-section">
     <div class="info-content">
       <h2>GENERAL INFORMATION</h2>
-      <p>3 days of house, disco and techno in the woods.
+      <p>
+        3 days of house, disco and techno in the woods. 36 artists across 3
+        stages including Anetha, Ben Böhmer, HorsegiirL, Job Jobse, Ki/Ki,
+        Marlon Hoffstadt, Nene H, Sama’ Abdulhadi, Viken Arman, X CLUB. Karrusel
+        takes place at a secluded green spot on Refshaleøen in central
+        Copenhagen.
+      </p>
 
-        36 artists across 3 stages including Anetha, Ben Böhmer, HorsegiirL, Job Jobse, Ki/Ki, Marlon Hoffstadt, Nene H, Sama’ Abdulhadi, Viken Arman, X CLUB.
-        
-        Karrusel takes place at a secluded green spot on Refshaleøen in central Copenhagen.</p>
-
-        <h3>Adresse</h3>
+      <h3>Adresse</h3>
       <p>Refshalevej 193, 1432 Copenhagen</p>
       <h3>Opening Hours</h3>
       <ul>
-        <li>
-          Thursday 22 Aug 2024: 18.00-01.00
-        </li>
+        <li>Thursday 22 Aug 2024: 18.00-01.00</li>
         <li>Friday 23 Aug 2024: 18.00-04.00</li>
         <li>Saturday 24 Aug 2024: 18.00-03.00</li>
       </ul>
-      <!-- <h3>Festival experience</h3>
-      <p>Karrusel believes in the right to a harassment-free festival experience. We believe in the right of everyone to express themselves. Karrusel welcomes everybody – all with their different orientations, experiences, histories and backgrounds. Karrusel only exists if everyone takes care of each other, respects their own and others boundaries, embraces diversity and acts as a part of the community.</p>
-      <p>If you feel unsafe, please reach out to our awareness team. They will be wearing a pink vests and walk around the site and be at their base (see on this map). Ask any festival staff and they will guide you to the them.</p> -->
     </div>
     <img src="../imgs/img3.webp" alt="Artist Image" class="info-image" />
   </section>
 
   <!-- FAQ Section -->
-  <FaqBoks/>
-  <ScrollToTop/>
+  <FaqBoks />
+  <ScrollToTop />
   <Footer />
 </MainLayout>
 
 <style>
   /* .index_header{
     padding-top: 1em;
-        padding-bottom: 40px;
-  }
-
-  @media (max-width:900px){
-    .index_header{
-      padding-top: 7em;
-    }
+    padding-bottom: 2px;
   } */
+
+  @media (max-width: 900px) {
+    .index_header {
+      padding-top: 4em;
+    }
+  }
 
   h2,
   h3,
@@ -121,12 +119,11 @@ import Countdown from "../components/Countdown.astro";
     color: var(--secondary);
   }
 
-  
   .hero-section {
     position: relative;
     width: 100%;
     height: auto;
-    overflow: hidden; /
+    overflow: hidden;
   }
 
   /* Hero image settings */
@@ -142,213 +139,200 @@ import Countdown from "../components/Countdown.astro";
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    padding: 20px;
+    /* padding: 20px; */
   }
 
- 
   .hero-content h1 {
     white-space: nowrap;
     width: 100%;
-   /* margin: 20px; */
+    /* margin: 20px; */
   }
 
   .hero-content p {
-    margin: 10px 0; 
+    margin: 10px 0;
   }
 
   #countdown {
-  font-family: var(--font2);
-  font-size: 16px;
-  color: var( --quaternary);
-}
+    font-family: var(--font2);
+    font-size: 16px;
+    color: var(--quaternary);
+  }
 
   /*search*/
   .search-section {
-  display: flex;
-  justify-content: center; 
-  margin: 40px;
-}
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+  }
 
-
-
- /* wm section */
+  /* wm section */
   .wm {
-  display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  padding: 20px; 
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
 
-/* welcome section */
-.welcome {
-  text-align: center; 
-  margin-bottom: 20px; 
-}
-.welcome h2 {
-  /* position: absolute;  */
-  transform: translate(-1%, 400%) rotate(-10deg); 
-  font-size: 5.5vw;
-  white-space: nowrap; 
-}
+  /* welcome section */
+  .welcome {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .welcome h2 {
+    /* position: absolute;  */
+    transform: translate(-1%, 400%) rotate(-10deg);
+    font-size: 5.5vw;
+    white-space: nowrap;
+  }
 
-.welcome img {
-  max-width: 80vw; 
-  height: auto; 
-}
+  .welcome img {
+    max-width: 80vw;
+    height: auto;
+  }
 
-/* map section */
-/* .map-section {
+  /* map section */
+  /* .map-section {
   width: 100%; 
   display: flex; 
   justify-content: center; 
 } */
-.map-section {
-  width: 100%;
-  display: flex;
-  flex-direction: column; /* Stack h2 and the image vertically */
-  align-items: center; /* Horizontally center both elements */
-  justify-content: center; /* Vertically center both elements */
-}
-.map-section h2{
-  padding-bottom: 20px;
-  font-size: 5.5vw;
-}
-.map-image {
-  max-width: 100%; 
-  height: auto; 
-}
+  .map-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack h2 and the image vertically */
+    align-items: center; /* Horizontally center both elements */
+    justify-content: center; /* Vertically center both elements */
+  }
+  .map-section h2 {
+    padding-bottom: 20px;
+    font-size: 5.5vw;
+  }
+  .map-image {
+    max-width: 100%;
+    height: auto;
+  }
 
-.lineup-link {
-  display: flex;
-  justify-content: center;
-  color: inherit; /* Arver farven fra h2 */
-  text-decoration: none; /* Ingen understregning */
-  font-size: 64px;
-  font-family: var(--font1);
-  letter-spacing: 3px;
-}
-.lineup-link:hover{
-  transform: scale(1.1);
-}
+  .lineup-link {
+    display: flex;
+    justify-content: center;
+    color: inherit; /* Arver farven fra h2 */
+    text-decoration: none; /* Ingen understregning */
+    font-size: 64px;
+    font-family: var(--font1);
+    letter-spacing: 3px;
+  }
+  .lineup-link:hover {
+    transform: scale(1.1);
+  }
 
-.lineup-section p{
-  display: flex;
-  justify-content: center;
-}
-
-
+  .lineup-section p {
+    display: flex;
+    justify-content: center;
+  }
 
   /*app*/
 
-
   .app {
-  display: inline-block;
-  animation: slide 20s linear infinite;
-  white-space: nowrap;
-}
-.app-android {
-  display: inline-block;
-  animation: slide 20s linear infinite;
-  animation-delay: 2s;
-  white-space: nowrap;
-}
-.app-slider {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 30px;
-  overflow: hidden;
-
-}
-
-@keyframes slide {
-  0% {
-    transform: translateX(180%);
+    display: inline-block;
+    animation: slide 20s linear infinite;
+    white-space: nowrap;
+  }
+  .app-android {
+    display: inline-block;
+    animation: slide 20s linear infinite;
+    animation-delay: 2s;
+    white-space: nowrap;
+  }
+  .app-slider {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 30px;
+    overflow: hidden;
   }
 
-  100% {
-    transform: translateX(-200%);
+  @keyframes slide {
+    0% {
+      transform: translateX(180%);
+    }
+
+    100% {
+      transform: translateX(-200%);
+    }
   }
-}
 
-/*info*/
-.info-section{
-  padding: 20px;
-}
-.info-content p, .info-content ul{
-  margin-top: 10px;
-  margin-bottom: 30px;
-}
-
-.info-content li{
-  list-style: none;
-  color: var(--quaternary);
-  line-height: 25px;
-}
-
-.info-image {
-  max-width: 100%; 
-  height: auto; 
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-@media (min-width: 800px){
-
-  .wm {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-gap: 20px;
+  /*info*/
+  .info-section {
+    padding: 20px;
   }
-/* welcome section */
+  .info-content p,
+  .info-content ul {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
 
-.welcome h2 {
-  /* position: absolute;  */
-  transform: translate(-1%, 400%) rotate(-10deg); 
-  font-size: 4vw;
-  white-space: nowrap; 
-}
-.map-section h2{
+  .info-content li {
+    list-style: none;
+    color: var(--quaternary);
+    line-height: 25px;
+  }
 
-  font-size: 4vw;
-}
-.lineup-link {
-  padding-top: 50px;
-  font-size: 12vw;
+  .info-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 
-}
+  @media (min-width: 800px) {
+    .wm {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 20px;
+    }
+    /* welcome section */
 
-.info-section p, 
-.info-section li{
-font-size: 24px;
-}
+    .welcome h2 {
+      /* position: absolute;  */
+      transform: translate(-1%, 400%) rotate(-10deg);
+      font-size: 4vw;
+      white-space: nowrap;
+    }
+    .map-section h2 {
+      font-size: 4vw;
+    }
+    .lineup-link {
+      padding-top: 50px;
+      font-size: 12vw;
+    }
 
-.app {
-  display: inline-block;
-  animation: slide 20s linear infinite;
-  white-space: nowrap;
-}
-.app-android {
-  display: inline-block;
-  animation: slide 20s linear infinite;
-  animation-delay: 2s;
-  white-space: nowrap;
-}
-.app-slider {
-  margin-top: 120px;
-  margin-bottom: 120px;
-  display: flex;
-  justify-content: space-between;
-  /* width: 100%; 
+    .info-section p,
+    .info-section li {
+      font-size: 24px;
+    }
+
+    .app {
+      display: inline-block;
+      animation: slide 20s linear infinite;
+      white-space: nowrap;
+    }
+    .app-android {
+      display: inline-block;
+      animation: slide 20s linear infinite;
+      animation-delay: 2s;
+      white-space: nowrap;
+    }
+    .app-slider {
+      margin-top: 120px;
+      margin-bottom: 120px;
+      display: flex;
+      justify-content: space-between;
+      /* width: 100%; 
   overflow: hidden; */
-}
+    }
 
-.info-section{
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-}
-
-}
-
+    .info-section {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+    }
+  }
 </style>
-
-
